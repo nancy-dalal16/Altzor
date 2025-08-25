@@ -1,0 +1,105 @@
+#services-banner {
+  height: 90vh;
+  background: url('../img/services/service-banner.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+}
+#breadcrumb{
+  position: relative;
+  z-index: 2;
+    margin-top: -2rem;
+}
+#breadcrumb .container{
+  padding: 1rem 2rem;
+  border-radius: 24px;
+  background-color: var(--white);
+  width: fit-content;
+}
+#gain{
+  background: var(--grey);
+}
+
+.service-1{
+  background: url('../img/services/person-using-ar-technology-perform-their-occupation (2) 1.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+}
+.service-2{
+  background: url('../img/services/gain-2.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+}
+.service-3{
+  background: url('../img/services/gain-3.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+}
+.service-4{
+  background: url('../img/services/gain-4.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+}
+.strips{
+  background-color: var(--white);
+  padding: 1rem 1.5rem;
+  border-radius: 24px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  width: 25rem;
+  height: 5rem;
+}
+.strips p{
+  font-weight: var(--semibold);
+}
+.backdrop-img1 .col-md-6{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.strips:hover{
+  scale: 1.05;
+}
+.strips:hover img{
+  scale: 1.2;
+}
+
+
+@media screen and (max-width: 767px) {
+  .backdrop-img1{
+    height: 100vh;
+  }
+  .strips{
+    margin:10px 0;
+    width: 20rem;
+    height: 7rem;
+  }
+}

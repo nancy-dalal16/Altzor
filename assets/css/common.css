@@ -38,6 +38,18 @@ body {
     color: var(--black);
     overflow-x: hidden;
 }
+/* Hide scroolbar for chrome, safari, opera */
+body::-webkit-scrollbar{
+    display: none;
+}
+/* Hide scroolbar for firefox */
+html{
+    scrollbar-width: none;
+}
+/*Hide scrollbar for IE */
+body{
+    -ms-overflow-style: none;
+}
 
 a,
 a:hover,

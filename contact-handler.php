@@ -13,7 +13,7 @@ else{
 
 $name = $_POST['name'];
 $email = $_POST['email']; 
-$comapny = $_POST['company']; 
+$company = $_POST['company']; 
 $role = $_POST['role'];
 $mobile = $_POST['mobile'];
 $message = $_POST['message'];

@@ -144,6 +144,9 @@ video{
   border-radius: 12px;
   width: 15%;
 }
+ .global-solution{
+  width: 7% !important;
+ }
 @media(max-width:992px) {
   .banner-text {
     display: flex;
@@ -230,6 +233,10 @@ video{
  video{
   width: 25%;
  }
+  .global-solution{
+  width: 25% !important;
+ }
+
 }
 
 @media screen and (max-width: 680px) {}

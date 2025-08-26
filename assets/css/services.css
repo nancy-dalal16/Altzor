@@ -10,7 +10,8 @@
 #breadcrumb{
   position: relative;
   z-index: 2;
-    margin-top: -2rem;
+  margin-top: -3rem;
+  padding: 1rem;
 }
 #breadcrumb .container{
   padding: 1rem 2rem;

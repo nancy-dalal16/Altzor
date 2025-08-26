@@ -1,6 +1,6 @@
 #hero {
   height: 110vh;
-  background: url('../img/home/hero-back.png');
+  background: url('../img/home/Home-Page-Web-Image-Banner-1.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -55,7 +55,7 @@ background-color: var(--primary);
   .gray-card:hover p{
   color:var(--white);
  }
- .gray-card:hover img{
+ .gray-card:hover video{
   scale: 1.2;
  }
 
@@ -140,7 +140,10 @@ background-color: var(--primary);
   left: 50%; /* Moves the element halfway across the parent */
   transform: translate(-10%, -50%);
 }
-
+video{
+  border-radius: 12px;
+  width: 15%;
+}
 @media(max-width:992px) {
   .banner-text {
     display: flex;
@@ -157,13 +160,35 @@ background-color: var(--primary);
 
 @media screen and (max-width: 767px) {
   #hero{
-    height: 125vh;
+  height: 125vh;
+  /* background: url('../img/home/hero-back.png'); */
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+
   }
-  .banner-overlay {
+  .banner-overlay{
     position: relative;
   }
+  #hero .banner-overlay {
+    position: relative;
+    align-items: flex-start !important;
+  }
+  /* #hero .banner-overlay .banner-text{
+ -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.5);  
+  padding: 2rem 0.5rem;
+  border-radius: 24px;
+  } */
   .banner-text h1 {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
+  }
+    .banner-text p {
+ color: var(--white);
+ opacity: 1;
   }
   #whatwebuild{
     margin: 1rem;
@@ -202,7 +227,9 @@ background-color: var(--primary);
   left: 0%;
   transform: translate(0%, 0%);
 }
-
+ video{
+  width: 25%;
+ }
 }
 
 @media screen and (max-width: 680px) {}

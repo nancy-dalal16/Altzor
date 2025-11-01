@@ -133,7 +133,7 @@ p {
     background-color: var(--primary);
     color: var(--white);
     box-shadow: unset;
-    border: 1px solid var(--white);
+    border: 1px solid var(--primary);
 }
 
 .btn-arrow{

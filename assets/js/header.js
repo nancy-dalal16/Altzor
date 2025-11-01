@@ -1,63 +1,71 @@
-// function toggleButton() {
-//   const mobileNavBtn = document.querySelector(".mobile-navbar-btn");
-//   const headerNav = document.querySelector(".header");
-//   const mobileList = document.querySelector(".mobile-list");
+/**
+ * assets/js/header.js
+ * -------------------------------------------------
+ * 1. Mobile menu toggle
+ * 2. Dropdown menus (click-to-toggle) – event delegation
+ * 3. Close on outside click / Escape key
+ * -------------------------------------------------
+ * Works with header.html loaded via <div include="header.html"></div>
+ */
 
-//   const toggleNavbar = () => {
-//     const isActive = headerNav.classList.toggle("active");
-//     document.body.style.overflow = isActive ? "hidden" : "auto";
-//   };
-
-//   mobileNavBtn.addEventListener("click", toggleNavbar);
-//   mobileList.addEventListener("click", toggleNavbar);
-// }
-
-// function toggleButton() {
-//   const navbar = document.querySelector(".navbar");
-//   const headerNav = document.querySelector(".header");
-//   const mobileBtn = document.querySelector(".mobile-navbar-btn");
-//   const isActive = headerNav.classList.toggle("active");
-//   document.body.style.overflow = isActive ? "hidden" : "auto";
-
-//   navbar.classList.toggle("active");
-//   mobileBtn.classList.toggle("active");
-// }
-
-function toggleButton() {
+(() => {
+  /* ------------------------------------------------------------------ */
+  /* 1. MOBILE MENU TOGGLE                                              */
+  /* ------------------------------------------------------------------ */
+  const mobileBtn = document.querySelector(".mobile-navbar-btn");
+  const header = document.querySelector(".header");
   const navbar = document.querySelector(".navbar");
-  const headerNav = document.querySelector(".header");
-  const mobileBtn = document.querySelector(".mobile-navbar-btn");
 
-  if (navbar && headerNav && mobileBtn) {
-    const isActive = headerNav.classList.toggle("active");
-    navbar.classList.toggle("active");
-    mobileBtn.classList.toggle("active");
-    document.body.style.overflow = isActive ? "hidden" : "auto";
+  if (mobileBtn && header && navbar) {
+    mobileBtn.addEventListener("click", () => {
+      const active = header.classList.toggle("active");
+      navbar.classList.toggle("active");
+      mobileBtn.classList.toggle("active");
+      document.body.style.overflow = active ? "hidden" : "";
+    });
   }
-}
 
-function toggleDropdown(event) {
-  event.preventDefault(); // Prevent default link behavior
-  const dropdown = event.target.closest(".dropdown");
-  if (dropdown) {
+  /* ------------------------------------------------------------------ */
+  /* 2. DROPDOWN – CLICK TO TOGGLE (delegated)                         */
+  /* ------------------------------------------------------------------ */
+  document.addEventListener("click", (e) => {
+    const trigger = e.target.closest(".navbar-list .dropdown > a.navbar-link");
+    if (!trigger) return;
+
+    e.preventDefault(); // stop navigation
+    const dropdown = trigger.closest(".dropdown");
     const menu = dropdown.querySelector(".dropdown-menu");
-    if (menu) {
-      menu.classList.toggle("show");
-    }
-  }
-}
+    if (!menu) return;
 
-document.addEventListener("DOMContentLoaded", function () {
-  const mobileBtn = document.querySelector(".mobile-navbar-btn");
-  if (mobileBtn) {
-    mobileBtn.addEventListener("click", toggleButton);
-  }
+    const isOpen = menu.classList.contains("show");
 
-  // Add event listeners for dropdown toggles
-  const dropdownLinks = document.querySelectorAll(
-    ".navbar-list .dropdown .navbar-link"
-  );
-  dropdownLinks.forEach((link) => {
-    link.addEventListener("click", toggleDropdown);
+    // Close every open dropdown
+    document
+      .querySelectorAll(".dropdown-menu.show")
+      .forEach((m) => m.classList.remove("show"));
+
+    // Re-open the clicked one (unless it was already open)
+    if (!isOpen) menu.classList.add("show");
   });
-});
+
+  /* ------------------------------------------------------------------ */
+  /* 3. CLOSE WHEN CLICKING OUTSIDE                                    */
+  /* ------------------------------------------------------------------ */
+  document.addEventListener("click", (e) => {
+    if (e.target.closest(".dropdown")) return;
+    document
+      .querySelectorAll(".dropdown-menu.show")
+      .forEach((m) => m.classList.remove("show"));
+  });
+
+  /* ------------------------------------------------------------------ */
+  /* 4. OPTIONAL: CLOSE WITH ESC KEY                                   */
+  /* ------------------------------------------------------------------ */
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      document
+        .querySelectorAll(".dropdown-menu.show")
+        .forEach((m) => m.classList.remove("show"));
+    }
+  });
+})();

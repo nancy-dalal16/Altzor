@@ -1,0 +1,37 @@
+#engagement-models-banner {
+  height: 95vh;
+  background: url('../img/engagement-models/engagement-models-back.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+  border-bottom: 4px solid var(--primary);
+}
+
+.gcc{
+  background: url('../img/engagement-models/value-delivered.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+}
+.gcc-2{
+  background: url('../img/engagement-models/vc-pe-value-delivered.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+}
+video{
+  border-radius: 12px;
+  width: 25%;
+}

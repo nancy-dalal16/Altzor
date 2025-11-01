@@ -1,5 +1,5 @@
 #contact-banner {
-  height: 90vh;
+  height: 100vh;
   background: url('../img/home/hero-back.png');
   background-position: center;
   background-size: cover;
@@ -15,11 +15,11 @@
   color: #131314B2;
   font-size: 1rem;
 }
-.contact_info_content a{
+/* .contact_info_content a{
 color: var(--black);
     opacity: 0.5;
     font-size: 1rem;
-}
+} */
 .contact_info_content a:hover{
   color:var(--primary);
   opacity: 1;

@@ -22,7 +22,7 @@
 
   <!-- CSS References -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/plugins/carousel/owl.carousel.min.css" />
+
   <link rel="stylesheet" href="assets/plugins/scroll_animation/scroll-animation.css" />
   <link rel="stylesheet" href="assets/css/common.css" />
   <link rel="stylesheet" href="assets/css/header.css" />
@@ -31,7 +31,9 @@
   <link rel="stylesheet" href="assets/css/services.css" />
 
   <!-- JS References -->
-  <script src="assets/js/jquery.js "></script>
+  <script src="assets/js/jquery.js" defer></script>
+  <script src="assets/js/header.js" defer></script>
+
 
   <!-- Icons References -->
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
@@ -167,25 +169,29 @@
           data-aos-delay="400">
           <div class="col-md-6">
             <div class="strips gap-3">
-              <img src="./assets/img/services/unified.svg" alt="icons">
+              <img src="./assets/img/services/unified.svg" alt="icons" class="default-img">
+              <img src="./assets/img/services/unified-inv.svg" alt="icons" class="hover-img">
               <p class="text-black">Unified, trusted view of your enterprise data</p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="strips gap-3">
-              <img src="./assets/img/services/aiml.svg" alt="icons">
+              <img src="./assets/img/services/aiml.svg" alt="icons" class="default-img">
+              <img src="./assets/img/services/aiml-inv.svg" alt="icons" class="hover-img">
               <p class="text-black">AI/ML-ready data pipelines that accelerate innovation</p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="strips gap-3">
-              <img src="./assets/img/services/faster-insights.svg" alt="icons">
+              <img src="./assets/img/services/faster-insights.svg" alt="icons" class="default-img">
+              <img src="./assets/img/services/faster-insights-inv.svg" alt="icons" class="hover-img">
               <p class="text-black">Faster insights with reduced operational overhead</p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="strips gap-3">
-              <img src="./assets/img/services/data-platforms.svg" alt="icons">
+              <img src="./assets/img/services/data-platforms.svg" alt="icons" class="default-img">
+              <img src="./assets/img/services/data-platforms-inv.svg" alt="icons" class="hover-img">
               <p class="text-black">Data platforms designed to scale globally</p>
             </div>
           </div>
@@ -205,14 +211,15 @@
   <script src="assets/plugins/carousel/owl.carousel.min.js"></script>
   <script src="assets/plugins/scroll_animation/scroll-animation.js"></script>
   <script src="assets/js/common.js"></script>
-  <script src="assets/js/header.js"></script>
+  <!-- <script src="assets/js/header.js"></script> -->
   <script src="assets/js/home.js"></script>
 
   <script>
-    window.onload = function () {
+    document.addEventListener("DOMContentLoaded", function () {
       $(".home").removeClass("active");
       $(".dataeng").addClass("active");
-    }
+    });
+
   </script>
 
 </body>

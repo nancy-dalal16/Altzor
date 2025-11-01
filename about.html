@@ -22,7 +22,7 @@
 
   <!-- CSS References -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/plugins/carousel/owl.carousel.min.css" />
+
   <link rel="stylesheet" href="assets/plugins/scroll_animation/scroll-animation.css" />
   <link rel="stylesheet" href="assets/css/common.css" />
   <link rel="stylesheet" href="assets/css/header.css" />
@@ -31,7 +31,8 @@
   <link rel="stylesheet" href="assets/css/services.css" />
 
   <!-- JS References -->
-  <script src="assets/js/jquery.js "></script>
+  <script src="assets/js/jquery.js" defer></script>
+  <script src="assets/js/header.js" defer></script>
 
   <!-- Icons References -->
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
@@ -191,7 +192,7 @@
   <script src="assets/plugins/carousel/owl.carousel.min.js"></script>
   <script src="assets/plugins/scroll_animation/scroll-animation.js"></script>
   <script src="assets/js/common.js"></script>
-  <script src="assets/js/header.js"></script>
+  <!-- <script src="assets/js/header.js"></script> -->
   <script src="assets/js/home.js"></script>
   <!-- <script>
     document.querySelectorAll('.dropdown > a').forEach(link => {
@@ -203,10 +204,14 @@
     });
   </script> -->
   <script>
-    window.onload = function () {
+    document.addEventListener("DOMContentLoaded", function () {
       $(".home").removeClass("active");
       $(".about").addClass("active");
-    }
+    });
+    // window.onload = function () {
+    //   $(".home").removeClass("active");
+    //   $(".about").addClass("active");
+    // }
   </script>
 
 </body>

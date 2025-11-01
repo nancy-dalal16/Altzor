@@ -1,11 +1,12 @@
 #services-banner {
-  height: 90vh;
-  background: url('../img/services/service-banner.png');
+  height: 95vh;
+  background: url('../img/services/service-banner.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   z-index: 1;
+  border-bottom: 4px solid var(--primary);
 }
 #breadcrumb{
   position: relative;
@@ -18,13 +19,14 @@
   border-radius: 24px;
   background-color: var(--white);
   width: fit-content;
+  border-top: 5px solid var(--primary);
 }
 #gain{
   background: var(--grey);
 }
 
 .service-1{
-  background: url('../img/services/person-using-ar-technology-perform-their-occupation (2) 1.png');
+  background: url('../img/services/person-using-ar-technology-perform-their-occupation\ \(2\)\ 1.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -35,7 +37,7 @@
   border-radius: 24px;
 }
 .service-2{
-  background: url('../img/services/gain-2.png');
+  background: url('../img/services/gain-2.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -46,7 +48,7 @@
   border-radius: 24px;
 }
 .service-3{
-  background: url('../img/services/gain-3.png');
+  background: url('../img/services/gain-3.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -57,7 +59,7 @@
   border-radius: 24px;
 }
 .service-4{
-  background: url('../img/services/gain-4.png');
+  background: url('../img/services/gain-4.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -72,7 +74,7 @@
   padding: 1rem 1.5rem;
   border-radius: 24px;
   display: inline-flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   margin: 2rem 0;
   width: 25rem;
@@ -91,6 +93,16 @@
 }
 .strips:hover img{
   scale: 1.2;
+}
+.strips:hover .default-img{
+  display: none;
+}
+.strips:hover .hover-img{
+  display: block;
+}
+
+.strips .hover-img{
+  display: none;
 }
 
 

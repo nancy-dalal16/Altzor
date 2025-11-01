@@ -36,6 +36,7 @@ footer ul li a:hover{
 .copyright .bx-sm:hover{
   color:var(--secondary);
   scale: 1.2;
+  transition: all.3s ease-in;
 }
  .copyright  p, .left-side p{
   color:var(--black) !important;
@@ -47,7 +48,10 @@ a.kathart{
 a.kathart:hover{
   color:var(--secondary);
 }
-
+#cta:hover{
+  scale: 1.05;
+  transition: all.3s ease-in;
+}
 @media screen and (max-width: 768px) {
   #cta{
     padding: 1rem;

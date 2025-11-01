@@ -1,7 +1,7 @@
 <?php 
 
 $errors = '';
-$myemail = 'nancydalal16@gmail.com';
+$myemail = 'enquiry@altzor.com';
 // $myemail = 'nancydalal16@gmail.com';
 if(empty($_POST['name'])  ||
 	empty($_POST['email']) || empty($_POST['company']) || empty($_POST['role']) ||
@@ -23,7 +23,7 @@ $message = $_POST['message'];
 	$email_subject = "Inquiry From: $name";
 	$email_body = "Inquiry Details:\n Name: $name \n Email: $email \n Mobile Number: $mobile \n Company / Organization: $company  \n Role / Designation: $role \n Message: $message"; 
 	
-	$headers = "From: altzorsupport@gmail.com"; 
+	$headers = "From: support@altzor.com"; 
 	
 	mail($to,$email_subject,$email_body,$headers);
 	//redirect to the 'thank you' page

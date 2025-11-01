@@ -22,7 +22,7 @@
 
   <!-- CSS References -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/plugins/carousel/owl.carousel.min.css" />
+
   <link rel="stylesheet" href="assets/plugins/scroll_animation/scroll-animation.css" />
   <link rel="stylesheet" href="assets/css/common.css" />
   <link rel="stylesheet" href="assets/css/header.css" />
@@ -31,7 +31,8 @@
   <link rel="stylesheet" href="assets/css/services.css" />
 
   <!-- JS References -->
-  <script src="assets/js/jquery.js "></script>
+  <script src="assets/js/jquery.js" defer></script>
+  <script src="assets/js/header.js" defer></script>
 
   <!-- Icons References -->
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
@@ -167,25 +168,29 @@
           data-aos-delay="400">
           <div class="col-md-6">
             <div class="strips gap-3">
-              <img src="./assets/img/services/right-tech.svg" alt="icons">
+              <img src="./assets/img/services/right-tech.svg" alt="icons" class="default-img">
+              <img src="./assets/img/services/right-tech-inv.svg" alt="icons" class="hover-img">
               <p class="text-black">The right technology choices for long-term success</p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="strips gap-3">
-              <img src="./assets/img/services/enterprise-strategy.svg" alt="icons">
+              <img src="./assets/img/services/enterprise-strategy.svg" alt="icons" class="default-img">
+              <img src="./assets/img/services/enterprise-strategy-inv.svg" alt="icons" class="hover-img">
               <p class="text-black">Future-ready systems aligned with enterprise strategy</p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="strips gap-3">
-              <img src="./assets/img/services/accelerated.svg" alt="icons">
+              <img src="./assets/img/services/accelerated.svg" alt="icons" class="default-img">
+              <img src="./assets/img/services/accelerated-inv.svg" alt="icons" class="hover-img">
               <p class="text-black">Accelerated transformation with lower technical debt</p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="strips gap-3">
-              <img src="./assets/img/services/ai-native.svg" alt="icons">
+              <img src="./assets/img/services/ai-native.svg" alt="icons" class="default-img">
+              <img src="./assets/img/services/ai-native-inv.svg" alt="icons" class="hover-img">
               <p class="text-black">A partner who blends vision, execution, and AI-native depth</p>
             </div>
           </div>
@@ -205,13 +210,14 @@
   <script src="assets/plugins/carousel/owl.carousel.min.js"></script>
   <script src="assets/plugins/scroll_animation/scroll-animation.js"></script>
   <script src="assets/js/common.js"></script>
-  <script src="assets/js/header.js"></script>
+  <!-- <script src="assets/js/header.js"></script> -->
   <script src="assets/js/home.js"></script>
   <script>
-    window.onload = function () {
+    document.addEventListener("DOMContentLoaded", function () {
       $(".home").removeClass("active");
       $(".techeng").addClass("active");
-    }
+    });
+
   </script>
 
 </body>

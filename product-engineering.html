@@ -22,7 +22,7 @@
 
   <!-- CSS References -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/plugins/carousel/owl.carousel.min.css" />
+
   <link rel="stylesheet" href="assets/plugins/scroll_animation/scroll-animation.css" />
   <link rel="stylesheet" href="assets/css/common.css" />
   <link rel="stylesheet" href="assets/css/header.css" />
@@ -31,7 +31,8 @@
   <link rel="stylesheet" href="assets/css/services.css" />
 
   <!-- JS References -->
-  <script src="assets/js/jquery.js "></script>
+  <script src="assets/js/jquery.js" defer></script>
+  <script src="assets/js/header.js" defer></script>
 
   <!-- Icons References -->
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
@@ -166,25 +167,29 @@
           data-aos-delay="400">
           <div class="col-md-6">
             <div class="strips gap-3">
-              <img src="./assets/img/services/faster-time.svg" alt="icons">
+              <img src="./assets/img/services/faster-time.svg" alt="icons" class="default-img">
+              <img src="./assets/img/services/faster-time-inv.svg" alt="icons" class="hover-img">
               <p class="text-black">Faster time-to-market for new digital products</p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="strips gap-3">
-              <img src="./assets/img/services/reduced-technical.svg" alt="icons">
+              <img src="./assets/img/services/reduced-technical.svg" alt="icons" class="default-img">
+              <img src="./assets/img/services/reduced-technical-inv.svg" alt="icons" class="hover-img">
               <p class="text-black">Reduced technical debt and smarter use of platforms</p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="strips gap-3">
-              <img src="./assets/img/services/products-code.svg" alt="icons">
+              <img src="./assets/img/services/products-code.svg" alt="icons" class="default-img">
+              <img src="./assets/img/services/products-code-inv.svg" alt="icons" class="hover-img">
               <p class="text-black">Products that evolve continuously with AI and data</p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="strips gap-3">
-              <img src="./assets/img/services/partner.svg" alt="icons">
+              <img src="./assets/img/services/partner.svg" alt="icons" class="default-img">
+              <img src="./assets/img/services/partner-inv.svg" alt="icons" class="hover-img">
               <p class="text-black">A partner who builds with you — not just for you</p>
             </div>
           </div>
@@ -204,14 +209,15 @@
   <script src="assets/plugins/carousel/owl.carousel.min.js"></script>
   <script src="assets/plugins/scroll_animation/scroll-animation.js"></script>
   <script src="assets/js/common.js"></script>
-  <script src="assets/js/header.js"></script>
+  <!-- <script src="assets/js/header.js"></script> -->
   <script src="assets/js/home.js"></script>
 
   <script>
-    window.onload = function () {
+    document.addEventListener("DOMContentLoaded", function () {
       $(".home").removeClass("active");
-      $(".proeng").addClass("active");
-    }
+      $(".prodeng").addClass("active");
+    });
+
   </script>
 
 </body>

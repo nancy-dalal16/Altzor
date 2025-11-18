@@ -48,7 +48,62 @@
 <body>
 
   <!--Header Section Starts-->
-  <div include="header.html"></div>
+  <!-- Header Starts -->
+  <header class="header">
+    <div class="container">
+
+      <div class="headerHolder">
+        <a href="./">
+          <img src="assets/img/Altzor-Logo.svg" alt="logo" class="logo" />
+        </a>
+        <nav class="navbar">
+
+          <ul class="navbar-list  mobile-list">
+            <li class="nav-item"><a href="./" class="nav-link home">Home</a></li>
+            <li class="nav-item"><a href="./about" class="nav-link about">About</a></li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                aria-expanded="false">Services <i class='bx bx-sm bx-chevron-down'></i> </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item prodeng" href="./product-engineering">Product Engineering</a></li>
+                <li><a class="dropdown-item dataeng" href="./data-engineering">Data Engineering</a></li>
+                <li><a class="dropdown-item plateng" href="./platform-based-engineering">Platform-Based
+                    Engineering</a></li>
+                <li><a class="dropdown-item techeng" href="./technology-offerings">Technology
+                    Offerings</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                aria-expanded="false">Engagement Models<i class='bx bx-sm bx-chevron-down'></i> </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item gccservice" href="./gcc-as-a-service">GCC-as-a-Service for Global
+                    Enterprise</a></li>
+                <li><a class="dropdown-item vcpe" href="./vc-pe-backed-portfolio-support">VC/PE-backed
+                    Portfolio Support</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link offerings">Careers</a></li>
+            <li class="nav-item"><a href="#" class="nav-link packages">Why Choose Us</a></li>
+            <li><a href="./contact-us" class="primary-btn mobile-btn">Contact Us &nbsp;<i
+                  class="bx bx-right-arrow-alt bx-sm btn-arrow"></i></a></li>
+
+
+          </ul>
+        </nav>
+        <a href="./contact-us" class="primary-btn desktop-btn">Contact Us &nbsp;<i
+            class="bx bx-right-arrow-alt bx-sm btn-arrow"></i></a>
+        <div class="mobile-navbar-btn">
+          <i class='bx bx-menu bx-lg mobile-nav-icon' name="menu-outline"></i>
+          <i class='bx bx-menu-alt-right bx-lg mobile-nav-icon' name="close-outline"></i>
+        </div>
+      </div>
+    </div>
+
+  </header>
+  <!-- Header Ends -->
   <!--Header Section Ends-->
 
   <!-- Banner Section Starts -->
@@ -191,9 +246,18 @@
             </form>
 
           </div> -->
-          <script src="https://js-na2.hsforms.net/forms/embed/244214510.js" defer></script>
+          <!-- <script src="https://js-na2.hsforms.net/forms/embed/244214510.js" defer></script>
           <div class="hs-form-frame" data-region="na2" data-form-id="23cc5c36-c999-490c-bc5a-5bab6d7c92dc"
-            data-portal-id="244214510"></div>
+            data-portal-id="244214510"></div> -->
+
+          <script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
+          <script>
+            hbspt.forms.create({
+              portalId: "244214510",
+              formId: "42a320a6-80ae-4dc1-b988-a66793fdd8d7",
+              region: "na2"
+            });
+          </script>
         </div>
       </div>
     </div>
@@ -213,11 +277,7 @@
   <script src="assets/js/common.js"></script>
   <!-- <script src="assets/js/header.js"></script> -->
   <script src="assets/js/home.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      $(".home").removeClass("active");
-    });
-  </script>
+
 
 </body>
 

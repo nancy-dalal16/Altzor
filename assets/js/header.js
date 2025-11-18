@@ -8,23 +8,23 @@
  * Works with header.html loaded via <div include="header.html"></div>
  */
 
-(() => {
-  /* ------------------------------------------------------------------ */
-  /* 1. MOBILE MENU TOGGLE                                              */
-  /* ------------------------------------------------------------------ */
-  const mobileBtn = document.querySelector(".mobile-navbar-btn");
+document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".header");
   const navbar = document.querySelector(".navbar");
+  const mobileBtn = document.querySelector(".mobile-navbar-btn");
 
+  /* ----------------------------------------
+   * 1. MOBILE MENU TOGGLE
+   * ---------------------------------------- */
   if (mobileBtn && header && navbar) {
-    mobileBtn.addEventListener("click", () => {
-      const active = header.classList.toggle("active");
+    mobileBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isActive = header.classList.toggle("active");
       navbar.classList.toggle("active");
       mobileBtn.classList.toggle("active");
-      document.body.style.overflow = active ? "hidden" : "";
+      document.body.style.overflow = isActive ? "hidden" : "";
     });
   }
-
   /* ------------------------------------------------------------------ */
   /* 2. DROPDOWN – CLICK TO TOGGLE (delegated)                         */
   /* ------------------------------------------------------------------ */
@@ -68,4 +68,4 @@
         .forEach((m) => m.classList.remove("show"));
     }
   });
-})();
+});

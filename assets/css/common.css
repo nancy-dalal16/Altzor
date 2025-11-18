@@ -241,11 +241,12 @@ p {
     box-shadow: none;
 }
 
-label {
+label, .hsfc-FieldLabel  {
     font-weight: var(--regular) !important;
-    color: var(--black);
+    color: var(--black) !important;
     margin-bottom: 0.5rem;
-    font-size: 1rem;
+    font-size: 1rem !important;
+    font-family: 'Inter', sans-serif !important;
 }
 input::placeholder {
     color: #ADAEBC !important;

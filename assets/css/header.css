@@ -31,14 +31,15 @@ header {
 }
 .navbar-list {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   list-style: none;
   align-items: center;
   font-size: 1rem;
 }
 
-.navbar-link:link,
-.navbar-link:visited {
+.nav-link:link,
+.nav-link:visited,
+.nav-link:focus,  .nav-link, .dropdown-item {
   display: inline-block;
   text-decoration: none;
   font-size: 1rem;
@@ -47,8 +48,8 @@ header {
   color: #cdcee5;
 }
 
-.navbar-link:hover,
-.navbar-link:active {
+.nav-link:hover,
+.nav-link:active, .dropdown-item:active, .dropdown-item:hover {
   color: white; /* Text color */
   text-shadow: 
     0px 0px 0px var(--primary),  /* Bottom-right shadow */
@@ -103,6 +104,23 @@ header {
  /* background: #ffffff14 !important; */
  background: #292957 !important;
  }
+
+ /* Remove Bootstrap’s default caret */
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+/* Optional: rotate the chevron when open */
+.dropdown-toggle[aria-expanded="true"] .bx-chevron-down {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+.dropdown-toggle .bx-chevron-down {
+  transition: transform 0.3s ease;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
 
 
 @media (max-width: 992px) {
@@ -160,8 +178,8 @@ header {
     word-wrap: break-word; /* Ensure words break to next line */
     word-break: break-word; /* Break long words */
   }
-  .navbar-link:link,
-  .navbar-link:visited {
+  .nav-link:link,
+  .nav-link:visited {
     font-size: 1.2rem;
     width: 100%;
     text-align: left;
@@ -256,14 +274,35 @@ header {
     opacity: 1;
     visibility: visible;
   }
+
+  .navbar {
+  display: none;
+}
+
+.navbar.active {
+  display: block;
+}
+
+.mobile-nav-icon[name="close-outline"] {
+  display: none;
+}
+
+.mobile-navbar-btn.active .bx-menu {
+  display: none;
+}
+
+.mobile-navbar-btn.active .bx-menu-alt-right {
+  display: inline-block;
+}
+
 }
 
 @media (max-width: 680px) {
-  .navbar-link {
+  .nav-link {
     font-size: 1.2rem;
   }
-  .navbar-link:link,
-  .navbar-link:visited,
+  .nav-link:link,
+  .nav-link:visited,
   .contact-button {
     font-size: 1.2rem;
   }

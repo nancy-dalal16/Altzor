@@ -47,7 +47,60 @@
 <body>
 
   <!--Header Section Starts-->
-  <div include="header.html"></div>
+  <header class="header">
+    <div class="container">
+
+      <div class="headerHolder">
+        <a href="./">
+          <img src="assets/img/Altzor-Logo.svg" alt="logo" class="logo" />
+        </a>
+        <nav class="navbar">
+
+          <ul class="navbar-list  mobile-list">
+            <li class="nav-item"><a href="./" class="nav-link home">Home</a></li>
+            <li class="nav-item"><a href="./about" class="nav-link about">About</a></li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                aria-expanded="false">Services <i class='bx bx-sm bx-chevron-down'></i></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item prodeng" href="./product-engineering">Product Engineering</a></li>
+                <li><a class="dropdown-item dataeng" href="./data-engineering">Data Engineering</a></li>
+                <li><a class="dropdown-item plateng" href="./platform-based-engineering">Platform-Based
+                    Engineering</a></li>
+                <li><a class="dropdown-item techeng" href="./technology-offerings">Technology
+                    Offerings</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                aria-expanded="false">Engagement Models <i class='bx bx-sm bx-chevron-down'></i></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item gccservice" href="./gcc-as-a-service">GCC-as-a-Service for Global
+                    Enterprise</a></li>
+                <li><a class="dropdown-item vcpe active" href="./vc-pe-backed-portfolio-support">VC/PE-backed
+                    Portfolio Support</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link offerings">Careers</a></li>
+            <li class="nav-item"><a href="#" class="nav-link packages">Why Choose Us</a></li>
+            <li><a href="./contact-us" class="primary-btn mobile-btn">Contact Us &nbsp;<i
+                  class="bx bx-right-arrow-alt bx-sm btn-arrow"></i></a></li>
+
+
+          </ul>
+        </nav>
+        <a href="./contact-us" class="primary-btn desktop-btn">Contact Us &nbsp;<i
+            class="bx bx-right-arrow-alt bx-sm btn-arrow"></i></a>
+        <div class="mobile-navbar-btn">
+          <i class='bx bx-menu bx-lg mobile-nav-icon' name="menu-outline"></i>
+          <i class='bx bx-menu-alt-right bx-lg mobile-nav-icon' name="close-outline"></i>
+        </div>
+      </div>
+    </div>
+
+  </header>
   <!--Header Section Ends-->
 
 
@@ -216,12 +269,6 @@
   <!-- <script src="assets/js/header.js"></script> -->
   <script src="assets/js/home.js"></script>
 
-  <script>
-    window.onload = function () {
-      $(".home").removeClass("active");
-      $(".vcpe").addClass("active");
-    }
-  </script>
 
 </body>
 

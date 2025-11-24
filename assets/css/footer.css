@@ -29,11 +29,11 @@ footer p{
 footer ul li a:hover{
   color:var(--primary);
 }
-.copyright .bx-sm{
+.copyright .bx-sm, .bx-md{
   color:var(--primary);
   margin-right:10px;
 }
-.copyright .bx-sm:hover{
+.copyright .bx-sm:hover, .bx-md:hover{
   color:var(--secondary);
   scale: 1.2;
   transition: all.3s ease-in;

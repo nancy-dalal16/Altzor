@@ -51,7 +51,9 @@
   scale: 1.02;
     transition: all.3s ease-in;
 }
-
+  #talent .gray-card video{
+    width: 15%;
+  }
  .gray-card:hover video{
   scale: 1.2;
  }
@@ -89,12 +91,14 @@
   border:1px solid var(--grey);
 }
 
-.gray-card-2:hover, .white-card:hover{
+.gray-card-2:hover{
   scale: 1.05;
   transition: all.3s ease-in;
   border: 1px solid var(--primary);
 }
-
+.white-card:hover{
+ border: 1px solid var(--primary);
+}
 /* #about .container .row{
   max-width: 72rem;
 } */
@@ -105,6 +109,7 @@
   border-radius: 24px;
   height: 100%;
   box-shadow: 0px 12px 32px 0px #1313140F;
+  border: 1px solid transparent;
 
 }
 .white-card:hover a{
@@ -251,6 +256,9 @@ video{
  video{
   width: 25%;
  }
+  #talent .gray-card video{
+    width: 25%;
+  }
   .global-solution{
   width: 25% !important;
  }

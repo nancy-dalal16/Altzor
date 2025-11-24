@@ -415,3 +415,11 @@ font-size: 2rem;
   opacity: 0;
   visibility: hidden;
 }
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+img, svg {
+  shape-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
+}

@@ -57,14 +57,24 @@
  .gray-card:hover video{
   scale: 1.2;
  }
- .gray-card:hover a{
+ .gray-card:hover a.primary-btn-inverse{
   background: var(--primary);
   color: var(--white);
  }
-  .gray-card:hover a i{
+  .gray-card:hover a.primary-btn-inverse i{
   background: var(--white);
   color: var(--primary);
  }
+
+ #leaders .gray-card:hover a{
+  background: transparent !important;
+  color: transparent !important;
+ }
+  #leaders .gray-card:hover a i{
+  background: transparent !important;
+  color: var(--primary);
+ }
+
 
 .gray-card p, .white-card p, .gray-card-2 p {
   color: #131314B2;

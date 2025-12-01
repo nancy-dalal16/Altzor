@@ -1,10 +1,17 @@
 #why-choose-us {
   height: 100vh;
   background: url('../img/why-choose-us/Hero-why-choose.webp');
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   z-index: 1;
   border-bottom: 4px solid var(--primary);
 }
+
+#approach img{
+  height: 190px;
+  width: 250px;
+  object-fit: cover;
+}
+

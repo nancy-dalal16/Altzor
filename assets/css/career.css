@@ -23,6 +23,7 @@ input, select{
   width: 23vw;
   padding: 10px 20px;
   margin: 0;
+  background: var(--white);
 }
 
 .job-card{

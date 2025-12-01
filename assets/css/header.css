@@ -342,8 +342,14 @@ header {
   display: none;
 }
 }
-
-
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .header .container {
+    max-width: 1250px;
+  }
+  .navbar-list {
+    gap:5px;
+  }
+}
 
 /* Desktop hover compatibility
 @media (min-width: 993px) {

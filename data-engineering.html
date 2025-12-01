@@ -62,7 +62,15 @@
 
           <ul class="navbar-list  mobile-list">
             <li class="nav-item"><a href="./" class="nav-link home">Home</a></li>
-            <li class="nav-item"><a href="./about" class="nav-link about">About</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                aria-expanded="false">About <i class='bx bx-sm bx-chevron-down'></i></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item about" href="./about">About Altzor</a></li>
+                <li><a class="dropdown-item lead " href="./leadership">Leadership Team</a></li>
+
+              </ul>
+            </li>
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
@@ -161,6 +169,42 @@
     </div>
   </section>
   <!--About Section Ends-->
+
+  <section id="engagement" class="page-section">
+    <div class="container">
+      <h2 class="section-title text-center" data-aos="fade-down" data-aos-delay="400">Comprehensive Data Platform
+        Consulting</h2>
+      <h4 class="supporting-title text-center" data-aos="fade-down" data-aos-delay="400">Microsoft Fabric & Databricks
+        Enterprise Solutions</h4>
+      <div class="row mt-5 g-4" data-aos="fade-down" data-aos-delay="400">
+        <div class="col-md-6">
+          <div class="white-card">
+            <img src="./assets/img/data-engineering/Microsoft-Fabric.webp" alt="icon">
+            <h4 class="mt-3 bold text-black">Microsoft Fabric Enterprise Solutions</h4>
+            <p class="mt-2">Accelerate your data transformation with our Microsoft Fabric Enterprise Solutions. We help
+              you unify your data estate using OneLake, integrating Data Engineering, Synapse Data Science, and
+              Real-Time Analytics into a single SaaS foundation. From seamless Power BI reporting to AI-driven insights,
+              we architect solutions that simplify complexity and maximize business value.</p>
+            <a href="./microsoft-fabric-enterprise-solutions" class="primary-btn-inverse">Learn More &nbsp; <i
+                class="bx bx-right-arrow-alt bx-sm btn-arrow-sec"></i></a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="white-card">
+            <img src="./assets/img/data-engineering/Databrick-lakehouse.webp" alt="icon">
+            <h4 class="mt-3 bold text-black">Databricks Lakehouse Enterprise Solutions</h4>
+            <p class="mt-2">Unlock the full potential of your data with our Databricks Lakehouse Enterprise Solutions.
+              We provide end-to-end architecture and managed services across the entire ecosystem—from Delta Lake
+              foundations and Unity Catalog governance to MLflow-driven MLOps. Whether you need high-performance SQL
+              analytics or real-time streaming, we ensure deep integration across your cloud and BI tools.</p>
+            <a href="./databricks-lakehouse-enterprise-solutions" class="primary-btn-inverse">Learn More &nbsp; <i
+                class="bx bx-right-arrow-alt bx-sm btn-arrow-sec"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <section id="approach" class="page-section">
     <div class="container">

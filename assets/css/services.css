@@ -105,6 +105,16 @@
   display: none;
 }
 
+#breadcrumb h4 a{
+    font-size: 1.25rem;
+    font-weight: var(--regular);
+    color: var(--black);
+    margin-bottom: 0.5rem;
+}
+
+#breadcrumb h4 a:hover{
+  color: var(--primary);
+}
 
 @media screen and (max-width: 767px) {
   .backdrop-img1{

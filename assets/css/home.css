@@ -1,4 +1,4 @@
-#hero {
+/* #hero {
   height: 110vh;
   background: url('../img/home/Home-Page-Web-Image-Banner-1_upscayl_4x_ultramix_balanced.webp');
   background-position: center;
@@ -6,14 +6,53 @@
   background-repeat: no-repeat;
   position: relative;
   z-index: 1;
+} */
+
+#hero {
+  height: 110vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: var(--secondary); 
+}
+#hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  z-index: 1;
+}
+.banner-overlay {
+  z-index: 2;
 }
 
+
+/* Background Video */
+.hero-bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 110vh;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  will-change: transform;
+  /* Optimize video loading */
+  background-color: var(--secondary);
+}
+
+/* Make content stay above video */
 .banner-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
+  z-index: 2;
+}
+.banner-text{
+  text-align: center;
 }
 
 .banner-text h1 {
@@ -21,11 +60,13 @@
   font-weight: var(--bold);
   color: var(--white);
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .banner-text p {
   color: #CDCEE5;
   font-size: 1.25rem;
+  text-align: center;
 }
 
 #whatwebuild .container {
@@ -205,12 +246,15 @@ video{
     padding-bottom: 3rem; */
 
   }
-  .banner-overlay{
-    position: relative;
-  }
+  
+  /* Mobile-specific adjustments */
   #hero .banner-overlay {
-    position: relative;
     align-items: flex-start !important;
+  }
+  
+  /* Ensure video height matches hero section on mobile */
+  .hero-bg-video {
+    height: 125vh;
   }
   /* #hero .banner-overlay .banner-text{
  -webkit-backdrop-filter: blur(10px);
@@ -275,4 +319,12 @@ video{
 
 }
 
-@media screen and (max-width: 680px) {}
+@media screen and (max-width: 680px) {
+  .banner-text{
+    margin-top: 7rem;
+    text-align: center;
+  }
+  .hero-bg-video {
+    top:40%;
+  }
+}

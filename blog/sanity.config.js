@@ -20,4 +20,14 @@ export const config = defineConfig({
     codeInput(),
   ],
   schema,
+  document: {
+    productionUrl: async (prev, context) => {
+      const { document } = context
+      if (document._type === 'post') {
+        const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blog.altzor.com'
+        return `${baseUrl}/api/draft?slug=${document.slug?.current}`
+      }
+      return prev
+    },
+  },
 })

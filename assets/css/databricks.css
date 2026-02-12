@@ -1,4 +1,4 @@
-#approach ul li{
+#approach ul li, #approach2 ul li, #approach3 ul li{
 color: #131314B2;
 font-size: 1rem;
 opacity: 0.7;
@@ -10,7 +10,7 @@ background-position: left center;
 background-size: 20px;
 }
 
-#approach ul{
+#approach ul, #approach2 ul, #approach3 ul{
   list-style-position: outside;
 
 }
@@ -19,7 +19,7 @@ video {
     width: 20%;
 }
 
-#databricks-banner {
+#databricks-banner, #genai-banner {
   height: 95vh;
   background: url('../img/data-engineering/databricks-banner.webp');
   background-position: center;
@@ -39,6 +39,7 @@ video {
   z-index: 1;
   border-bottom: 4px solid var(--primary);
 }
+
 
 @media screen and (max-width: 767px) {
 video {

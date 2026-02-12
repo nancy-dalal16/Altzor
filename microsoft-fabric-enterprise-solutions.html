@@ -20,6 +20,12 @@
 
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
 
+
+  <!-- Resource Hints for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com">
+
   <!-- CSS References -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
@@ -40,7 +46,8 @@
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"></noscript>
 
 
 </head>
@@ -84,6 +91,8 @@
                     Engineering</a></li>
                 <li><a class="dropdown-item techeng" href="./technology-offerings">Technology
                     Offerings</a></li>
+                <li><a class="dropdown-item genai" href="./generative-ai-engineering-services">Generative AI & AI
+                    Engineering</a></li>
               </ul>
             </li>
 
@@ -99,14 +108,19 @@
             </li>
             <li class="nav-item"><a href="./career" class="nav-link career">Careers</a></li>
             <li class="nav-item"><a href="./why-choose-us" class="nav-link whychoose">Why Choose Us</a></li>
-            <li><a href="./contact-us" class="primary-btn mobile-btn">Contact Us &nbsp;<i
-                  class="bx bx-right-arrow-alt bx-sm btn-arrow"></i></a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle no-popup" data-bs-toggle="dropdown" href="javascript:void(0)"
+                role="button" aria-expanded="false">Resources <i class='bx bx-sm bx-chevron-down'></i></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item gccservice" href="https://blog.altzor.com/">Blogs</a></li>
+              </ul>
+            </li>
+            <li><a href="./contact-us" class="primary-btn mobile-btn">Contact Us </a></li>
 
 
           </ul>
         </nav>
-        <a href="./contact-us" class="primary-btn desktop-btn">Contact Us &nbsp;<i
-            class="bx bx-right-arrow-alt bx-sm btn-arrow"></i></a>
+        <a href="./contact-us" class="primary-btn desktop-btn">Contact Us </a>
         <div class="mobile-navbar-btn">
           <i class='bx bx-menu bx-lg mobile-nav-icon' name="menu-outline"></i>
           <i class='bx bx-menu-alt-right bx-lg mobile-nav-icon' name="close-outline"></i>
@@ -163,7 +177,7 @@
         <div class="col-md-4">
           <div class="gray-card">
             <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
-            <video src="./assets/img/services/Data Factory.mp4" loop muted autoplay class="video"></video>
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/services/Data Factory.mp4" loop muted class="video lazy-video" playsinline></video>
             <p class="mt-3 bold text-black">Data Factory</p>
             <p class="mt-2">Design and operationalize resilient data integration fabrics that ingest, standardize and
               deliver trusted data to analytics and operational systems.</p>
@@ -179,7 +193,7 @@
         <div class="col-md-4">
           <div class="gray-card">
             <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
-            <video src="./assets/img/services/Data Engineering.mp4" loop muted autoplay class="video"></video>
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/services/Data Engineering.mp4" loop muted class="video lazy-video" playsinline></video>
             <p class="mt-3 bold text-black">Synapse Data Engineering</p>
             <p class="mt-2">Scalable Spark frameworks, automated ETL-to-ML workflows and collaborative notebooks to
               accelerate data engineering velocity.</p>
@@ -195,7 +209,7 @@
         <div class="col-md-4">
           <div class="gray-card">
             <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
-            <video src="./assets/img/services/Data Warehouse.mp4" loop muted autoplay class="video"></video>
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/services/Data Warehouse.mp4" loop muted class="video lazy-video" playsinline></video>
             <p class="mt-3 bold text-black">Data Warehouse</p>
             <p class="mt-2">High-performance, T-SQL compatible analytics engines designed for predictable SLAs and
               controlled cost at scale.</p>
@@ -211,7 +225,7 @@
         <div class="col-md-4">
           <div class="gray-card">
             <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
-            <video src="./assets/img/services/Power BI.mp4" loop muted autoplay class="video"></video>
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/services/Power BI.mp4" loop muted class="video lazy-video" playsinline></video>
             <p class="mt-3 bold text-black">Power BI</p>
             <p class="mt-2">Governed, self-service analytics with embedded insights and AI augmentation to make data
               consumable across the business.</p>
@@ -227,7 +241,7 @@
         <div class="col-md-4">
           <div class="gray-card">
             <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
-            <video src="./assets/img/services/Real Time Intelligiance.mp4" loop muted autoplay class="video"></video>
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/services/Real Time Intelligiance.mp4" loop muted class="video lazy-video" playsinline></video>
             <p class="mt-3 bold text-black">Real-Time Intelligence</p>
             <p class="mt-2">Operational analytics for telemetry and IoT with sub-second queries, alerting and automated
               playbooks.</p>
@@ -243,7 +257,7 @@
         <div class="col-md-4">
           <div class="gray-card">
             <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
-            <video src="./assets/img/services/Data Science.mp4" loop muted autoplay class="video"></video>
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/services/Data Science.mp4" loop muted class="video lazy-video" playsinline></video>
             <p class="mt-3 bold text-black">Data Science & MLOps</p>
             <p class="mt-2">From experimentation to production: governed model lifecycle, reproducible pipelines, and
               operational monitoring.</p>
@@ -259,7 +273,7 @@
         <div class="col-md-4">
           <div class="gray-card">
             <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
-            <video src="./assets/img/services/Data Azure.mp4" loop muted autoplay class="video"></video>
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/services/Data Azure.mp4" loop muted class="video lazy-video" playsinline></video>
             <p class="mt-3 bold text-black">Azure Purview</p>
             <p class="mt-2">Integrate Azure Purview for end-to-end data discovery, classification, and lineage —
               enabling trust, compliance, and security across your Fabric estate.</p>
@@ -275,7 +289,7 @@
         <div class="col-md-4">
           <div class="gray-card">
             <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
-            <video src="./assets/img/services/Gen AI.mp4" loop muted autoplay class="video"></video>
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/services/Gen AI.mp4" loop muted class="video lazy-video" playsinline></video>
             <p class="mt-3 bold text-black">GenAI & Copilot for Fabric</p>
             <p class="mt-2">Accelerate delivery and adoption with Fabric Copilot and GenAI: code generation, query
               assistance, automated documentation, and insight generation — reducing build time and increasing accuracy.
@@ -308,6 +322,62 @@
   <script src="assets/js/common.js"></script>
   <!-- <script src="assets/js/header.js"></script> -->
   <script src="assets/js/home.js"></script>
+
+
+
+  <!-- Improved Lazy Loading Script for Videos -->
+  <script>
+    (function() {
+      'use strict';
+      
+      const lazyVideos = document.querySelectorAll('video.lazy-video');
+      
+      if ('IntersectionObserver' in window) {
+        const videoObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              const video = entry.target;
+              const source = video.getAttribute('data-lazy-src');
+              
+              if (source) {
+                // Set preload to auto for faster loading
+                video.preload = 'auto';
+                video.src = source;
+                video.load();
+                
+                video.addEventListener('loadeddata', function() {
+                  video.play().catch(function(error) {
+                    console.log('Video autoplay prevented:', error);
+                  });
+                });
+                
+                video.classList.remove('lazy-video');
+                videoObserver.unobserve(video);
+              }
+            }
+          });
+        }, {
+          rootMargin: '300px 0px',  // Start loading 300px before entering viewport
+          threshold: 0.01
+        });
+        
+        lazyVideos.forEach(function(video) {
+          videoObserver.observe(video);
+        });
+      } else {
+        lazyVideos.forEach(function(video) {
+          const source = video.getAttribute('data-lazy-src');
+          if (source) {
+            video.src = source;
+            video.load();
+            video.play().catch(function(error) {
+              console.log('Video autoplay prevented:', error);
+            });
+          }
+        });
+      }
+    })();
+  </script>
 
 </body>
 

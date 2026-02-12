@@ -1,5 +1,5 @@
 header {
-  padding: 1rem 0px;
+  padding: 1rem 0;
   position: absolute;
   width: 100%;
   z-index: 999;
@@ -11,12 +11,12 @@ header {
   align-items: center;
   background: transparent;
   border-radius: 8px;
-  padding: 0.5rem 0rem;
+  padding: 1rem 0rem;
   margin-top: 1rem;
 }
 
 .navbar {
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   border-radius: 48px;
   /* background: #ffffff14; */
   background: #292957;
@@ -46,6 +46,8 @@ header {
   font-weight: var(--semibold);
   line-height: 2rem;
   color: #cdcee5;
+  /* padding: .25rem 1rem; */
+  padding: 0.25rem 0.7rem;
 }
 
 .nav-link:hover,
@@ -117,7 +119,8 @@ header {
 }
 .dropdown-toggle .bx-chevron-down {
   transition: transform 0.3s ease;
-  margin-left: 4px;
+  margin-left: -4px;
+  margin-top: -4px;
   vertical-align: middle;
 }
 

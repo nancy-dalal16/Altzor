@@ -1,0 +1,63 @@
+
+ #services-banner {
+  height: 95vh;
+  background: url('../img/services/service-banner.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+  border-bottom: 4px solid var(--primary);
+}
+ 
+ .accordion-item, .accordion-button, .accordion-header,  .accordion-button {
+  background-color: #F8F8FA;
+  border-radius:16px !important;
+ }
+ .accordion-item{
+  margin: 2rem 0;
+  border-radius:24px;
+  overflow: hidden;
+  border: 0;
+ }.accordion-button:focus { 
+    border-color: transparent;
+    box-shadow:none;
+ }
+ .accordion-header{
+  margin: 0.5rem;
+ }
+ .accordion-button:not(.collapsed){
+  background-color: #fff;
+  color:var(--primary);
+ }
+ .accordion-button{
+  font-size: 1.125rem;
+  color:var(--primary);
+  font-weight:var(--semibold)
+ }
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath d='M2 5l6 6 6-6' fill='none' stroke='%23FF6701' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+}
+.accordion-button::after { 
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath d='M2 5l6 6 6-6' fill='none' stroke='%23FF6701' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+}
+#genai-faqs p{
+  color:#131314B2;
+}
+#genai-faqs ul li{
+color: #131314B2;
+opacity: 0.7;
+font-size: 1rem;
+list-style: none;
+padding: 5px 30px;
+background-image: url("../img/data-engineering/check-mark.svg");
+background-repeat: no-repeat;
+background-position: left center;
+background-size: 20px;
+margin-left: 1rem;
+}
+
+#genai-faqs ul{
+  list-style-position: outside;
+
+}

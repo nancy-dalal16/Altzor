@@ -34,6 +34,7 @@ export default function Header() {
         { href: 'https://altzor.com/data-engineering', label: 'Data Engineering' },
         { href: 'https://altzor.com/platform-based-engineering', label: 'Platform-Based Engineering' },
         { href: 'https://altzor.com/technology-offerings', label: 'Technology Offerings' },
+        { href: 'https://altzor.com/generative-ai-engineering-services', label: 'Generative AI & AI Engineering' },
       ],
     },
     {
@@ -45,7 +46,12 @@ export default function Header() {
     },
     { href: 'https://altzor.com/career', label: 'Careers' },
     { href: 'https://altzor.com/why-choose-us', label: 'Why Choose Us' },
-    { href: 'https://blog.altzor.com', label: 'Blogs' },
+    {
+      label: 'Resources',
+      dropdown: [
+        { href: 'https://blog.altzor.com', label: 'Blogs' },
+      ],
+    },
   ]
 
   return (
@@ -57,7 +63,7 @@ export default function Header() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
+          <Link href="https://altzor.com/" className="shrink-0">
             <Image
               src="/assets/img/Altzor-Logo-Dark.svg"
               alt="Altzor"
@@ -94,7 +100,7 @@ export default function Header() {
                 <a
                   key={index}
                   href={link.href}
-                  className="nav-link text-sm font-medium text-gray-900 hover:text-primary transition-colors"
+                  className="nav-link text-md font-medium text-gray-900 hover:text-primary transition-colors"
                 >
                   {link.label}
                 </a>
@@ -107,9 +113,9 @@ export default function Header() {
             className="hidden lg:inline-flex items-center justify-center py-2 px-4 bg-primary text-white rounded-full font-medium transition-all duration-300 border border-primary hover:bg-white hover:text-primary group"
           >
             Contact Us
-            <span className="ml-2 w-5 h-5 bg-white text-primary rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+            {/* <span className="ml-2 w-5 h-5 bg-white text-primary rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:text-white">
               <ArrowRight className="w-3 h-3" />
-            </span>
+            </span> */}
           </a>
 
           {/* Mobile Menu Button */}

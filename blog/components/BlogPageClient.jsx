@@ -1,11 +1,9 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { getPosts, getCategories, getFeaturedPosts } from '@/lib/sanity'
 import BlogCard from '@/components/BlogCard'
-import CategoryBadge from '@/components/CategoryBadge'
 import Pagination from '@/components/Pagination'
-import { Search, Sparkles, X } from 'lucide-react'
+import { Search, X, Grid3x3, List } from 'lucide-react'
 
 const POSTS_PER_PAGE = 8
 
@@ -13,6 +11,15 @@ export default function BlogPageClient({ initialPosts, categories, featuredPosts
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [currentPage, setCurrentPage] = useState(1)
+  const [viewMode, setViewMode] = useState('grid') // 'grid' or 'list'
+
+  // Get the featured post from Sanity (marked as featured in Studio)
+  const featuredPost = featuredPosts && featuredPosts.length > 0 ? featuredPosts[0] : null
+  
+  // Get recent posts for sidebar (excluding the featured post if it exists)
+  const recentPosts = initialPosts && initialPosts.length > 1 
+    ? initialPosts.filter(post => post._id !== featuredPost?._id).slice(0, 5)
+    : []
 
   // Filter posts based on search query and selected category
   const filteredPosts = useMemo(() => {
@@ -29,18 +36,10 @@ export default function BlogPageClient({ initialPosts, categories, featuredPosts
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase()
       posts = posts.filter(post => {
-        // Search in title
         if (post.title?.toLowerCase().includes(query)) return true
-        
-        // Search in excerpt
         if (post.excerpt?.toLowerCase().includes(query)) return true
-        
-        // Search in author name
         if (post.author?.name?.toLowerCase().includes(query)) return true
-        
-        // Search in categories
         if (post.categories?.some(cat => cat.title?.toLowerCase().includes(query))) return true
-        
         return false
       })
     }
@@ -68,7 +67,6 @@ export default function BlogPageClient({ initialPosts, categories, featuredPosts
 
   const handlePageChange = (page) => {
     setCurrentPage(page)
-    // Scroll to top of blog section
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
@@ -78,125 +76,161 @@ export default function BlogPageClient({ initialPosts, categories, featuredPosts
   }, [searchQuery, selectedCategory])
 
   return (
-    <div className="bg-gray-50 min-h-screen">
-      {/* Enhanced Hero Section */}
-      <section className="relative bg-gradient-to-br from-[hsl(238,63%,20%)] via-[hsl(238,63%,25%)] to-[hsl(21,100%,51%)] py-24 md:py-32 overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }} />
-        </div>
-
-        <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
-              <Sparkles className="w-4 h-4 text-white" />
-              <span className="text-sm text-white font-medium">Insights & Innovation</span>
-            </div>
-            
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              Altzor <span className="text-[hsl(21,100%,51%)]">Blog</span>
+    <div className="bg-white min-h-screen">
+      {/* Minimal Hero Section */}
+      <section className=" border-b border-gray-200 bg-gray-100">
+        <div className="container py-12 md:py-16">
+          <div className="max-w-4xl">
+            <h1 className="text-5xl md:text-6xl font-bold text-secondary mb-4">
+              Blog
             </h1>
-            
-            <p className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xl text-secondary mb-8">
               Explore cutting-edge insights on AI-native engineering, data platforms, and modern product development
             </p>
 
-            {/* Search Bar with Functionality */}
-            <div className="max-w-2xl mx-auto">
+            {/* Search Bar */}
+            <div className="max-w-2xl">
               <div className="relative">
-                <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <input
                   type="text"
                   placeholder="Search articles..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-14 pr-14 py-4 rounded-full bg-white shadow-xl border-0 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-white/30 transition-all"
+                  className="w-full pl-12 pr-12 py-3 rounded-lg bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                 />
                 {searchQuery && (
                   <button
                     onClick={handleClearSearch}
-                    className="absolute right-6 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
                     aria-label="Clear search"
                   >
                     <X className="w-5 h-5" />
                   </button>
                 )}
               </div>
-              {searchQuery && (
-                <p className="text-white/80 text-sm mt-3">
-                  {filteredPosts.length} {filteredPosts.length === 1 ? 'result' : 'results'} found
-                </p>
-              )}
             </div>
           </div>
         </div>
-
-        {/* Decorative elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-[hsl(21,100%,51%)]/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-32 h-32 bg-white/10 rounded-full blur-3xl" />
       </section>
 
-
-
-
-
-      {/* All Blog Posts Grid with Pagination */}
-      <section className="py-16 md:py-24">
-        <div className="container">
-          {filteredPosts && filteredPosts.length > 0 ? (
-            <>
-              <div className="mb-8">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-                  {searchQuery ? 'Search Results' : 'Latest Posts'}
-                </h2>
-                <p className="text-lg text-gray-600">
-                  {searchQuery 
-                    ? `Found ${filteredPosts.length} ${filteredPosts.length === 1 ? 'article' : 'articles'} matching "${searchQuery}"`
-                    : 'Explore our latest insights and learnings'
-                  }
-                </p>
+      {/* Featured Story + What's New Section */}
+      {!searchQuery && !selectedCategory && featuredPost && (
+        <section className="bg-gray-50 py-12 md:py-16">
+          <div className="container">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-8 lg:gap-12">
+              {/* Featured Story */}
+              <div>
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-1 h-6 bg-primary rounded-full" />
+                  <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider">Featured Story</h2>
+                </div>
+                <BlogCard post={featuredPost} variant="featured" />
               </div>
 
-              {/* Category Filter for Latest Posts */}
+              {/* What's New Sidebar */}
+              <div>
+                <div className="flex items-center gap-2 mb-6 pt-16 md:pt-0">
+                  <div className="w-1 h-6 bg-primary rounded-full" />
+                  <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider">What's New</h2>
+                </div>
+                <div className="bg-white rounded-2xl border border-gray-200 p-4 md:p-6 space-y-4">
+                  {recentPosts.map((post) => (
+                    <BlogCard key={post._id} post={post} variant="sidebar" />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Recent Posts Section */}
+      <section className="py-12 md:py-16">
+        <div className="container">
+          {/* Section Header with Filters */}
+          <div className="mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">
+              {searchQuery ? 'Search Results' : 'Recent Posts'}
+            </h2>
+
+            {/* Category Filters + View Toggle */}
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              {/* Category Pills */}
               {categories && categories.length > 0 && (
-                <div className="mb-8">
-                  <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    onClick={() => handleCategoryChange(null)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                      !selectedCategory
+                        ? 'bg-gray-900 text-white'
+                        : 'bg-white text-gray-700 border border-gray-300 hover:border-gray-900'
+                    }`}
+                  >
+                    All
+                  </button>
+                  {categories.map((category) => (
                     <button
-                      onClick={() => handleCategoryChange(null)}
-                      className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
-                        !selectedCategory
-                          ? 'bg-primary text-white'
-                          : 'bg-white text-gray-700 border border-gray-200 hover:border-primary hover:text-primary'
+                      key={category._id}
+                      onClick={() => handleCategoryChange(category)}
+                      className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                        selectedCategory?._id === category._id
+                          ? 'bg-gray-900 text-white'
+                          : 'bg-white text-gray-700 border border-gray-300 hover:border-gray-900'
                       }`}
                     >
-                      All Posts
+                      {category.title}
                     </button>
-                    {categories.map((category) => (
-                      <button
-                        key={category._id}
-                        onClick={() => handleCategoryChange(category)}
-                        className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
-                          selectedCategory?._id === category._id
-                            ? 'bg-primary text-white '
-                            : 'bg-white text-gray-700 border border-gray-200 hover:border-primary hover:text-primary'
-                        }`}
-                      >
-                        {category.title}
-                      </button>
-                    ))}
-                  </div>
+                  ))}
                 </div>
               )}
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* View Toggle */}
+              <div className="hidden md:flex items-center gap-2 bg-white border border-gray-300 rounded-lg p-1" style={{width: 'fit-content'}}> 
+                <button
+                  onClick={() => setViewMode('grid')}
+                  className={`p-2 rounded transition-all duration-300 ${
+                    viewMode === 'grid'
+                      ? 'bg-gray-900 text-white'
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                  aria-label="Grid view"
+                >
+                  <Grid3x3 className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={() => setViewMode('list')}
+                  className={`p-2 rounded transition-all duration-300 ${
+                    viewMode === 'list'
+                      ? 'bg-gray-900 text-white'
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                  aria-label="List view"
+                >
+                  <List className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Posts Grid/List */}
+          {filteredPosts && filteredPosts.length > 0 ? (
+            <>
+              <div className={
+                viewMode === 'grid'
+                  ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8'
+                  : 'flex flex-col gap-4'
+              }>
                 {paginatedPosts.map((post) => (
-                  <BlogCard key={post._id} post={post} />
+                  <BlogCard 
+                    key={post._id} 
+                    post={post} 
+                    variant={viewMode === 'list' ? 'list' : 'default'} 
+                  />
                 ))}
               </div>
 
-              {/* Pagination Controls */}
+              {/* Pagination */}
               <Pagination
                 currentPage={currentPage}
                 totalPages={totalPages}
@@ -204,43 +238,34 @@ export default function BlogPageClient({ initialPosts, categories, featuredPosts
               />
             </>
           ) : searchQuery ? (
-            <div className="bg-white rounded-2xl p-16 text-center shadow-lg">
+            <div className="bg-white rounded-2xl border border-gray-200 p-16 text-center">
               <div className="max-w-md mx-auto">
                 <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Search className="w-10 h-10 text-gray-400" />
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   No results found
-                </h2>
+                </h3>
                 <p className="text-gray-600 mb-8">
                   We couldn't find any articles matching "<strong>{searchQuery}</strong>". Try different keywords or browse all posts.
                 </p>
                 <button
                   onClick={handleClearSearch}
-                  className="inline-flex items-center justify-center px-8 py-3 bg-primary text-white rounded-full font-semibold transition-all duration-300 hover:bg-primary/90 hover:shadow-lg"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white rounded-lg font-medium transition-all duration-300 hover:bg-gray-800"
                 >
                   Clear Search
                 </button>
               </div>
             </div>
           ) : (
-            <div className="bg-white rounded-2xl p-16 text-center shadow-lg">
+            <div className="bg-white rounded-2xl border border-gray-200 p-16 text-center">
               <div className="max-w-md mx-auto">
-                <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Search className="w-10 h-10 text-gray-400" />
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   No posts yet
-                </h2>
-                <p className="text-gray-600 mb-8">
+                </h3>
+                <p className="text-gray-600">
                   We're working on creating amazing content for you. Check back soon!
                 </p>
-                <a
-                  href="../"
-                  className="inline-flex items-center justify-center px-8 py-3 bg-primary text-white rounded-full font-semibold transition-all duration-300 hover:bg-primary/90 hover:shadow-lg"
-                >
-                  Return to Blog Page
-                </a>
               </div>
             </div>
           )}
@@ -249,3 +274,4 @@ export default function BlogPageClient({ initialPosts, categories, featuredPosts
     </div>
   )
 }
+

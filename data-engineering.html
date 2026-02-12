@@ -20,6 +20,11 @@
 
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
 
+  <!-- Resource Hints for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com">
+
   <!-- CSS References -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
@@ -28,6 +33,7 @@
   <link rel="stylesheet" href="assets/css/header.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="stylesheet" href="assets/css/home.css" />
+  <link rel="stylesheet" href="assets/css/databricks.css" />
   <link rel="stylesheet" href="assets/css/services.css" />
 
   <!-- JS References -->
@@ -39,8 +45,28 @@
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" media="print"
+    onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  </noscript>
 
+  <style>
+    #approach1 video,
+    #approach2 video,
+    #gain video {
+      width: 12%;
+    }
+
+    @media (max-width: 768px) {
+
+      #approach1 video,
+      #approach2 video,
+      #gain video {
+        width: 25%;
+      }
+    }
+  </style>
 
 </head>
 
@@ -83,6 +109,8 @@
                     Engineering</a></li>
                 <li><a class="dropdown-item techeng" href="./technology-offerings">Technology
                     Offerings</a></li>
+                <li><a class="dropdown-item genai" href="./generative-ai-engineering-services">Generative AI & AI
+                    Engineering</a></li>
               </ul>
             </li>
 
@@ -98,14 +126,19 @@
             </li>
             <li class="nav-item"><a href="./career" class="nav-link career">Careers</a></li>
             <li class="nav-item"><a href="./why-choose-us" class="nav-link whychoose">Why Choose Us</a></li>
-            <li><a href="./contact-us" class="primary-btn mobile-btn">Contact Us &nbsp;<i
-                  class="bx bx-right-arrow-alt bx-sm btn-arrow"></i></a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle no-popup" data-bs-toggle="dropdown" href="javascript:void(0)"
+                role="button" aria-expanded="false">Resources <i class='bx bx-sm bx-chevron-down'></i></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item gccservice" href="https://blog.altzor.com/">Blogs</a></li>
+              </ul>
+            </li>
+            <li><a href="./contact-us" class="primary-btn mobile-btn">Contact Us </a></li>
 
 
           </ul>
         </nav>
-        <a href="./contact-us" class="primary-btn desktop-btn">Contact Us &nbsp;<i
-            class="bx bx-right-arrow-alt bx-sm btn-arrow"></i></a>
+        <a href="./contact-us" class="primary-btn desktop-btn">Contact Us </a>
         <div class="mobile-navbar-btn">
           <i class='bx bx-menu bx-lg mobile-nav-icon' name="menu-outline"></i>
           <i class='bx bx-menu-alt-right bx-lg mobile-nav-icon' name="close-outline"></i>
@@ -161,8 +194,8 @@
         </div>
         <div class="col-md-6 d-flex flex-column justify-content-center">
           <div class="bodyImg-holder position-relative">
-            <img src="assets/img/services/Data-Stratagic-Asset-Banner-1.jpg" class="About Us Section Image"
-              width="50%" />
+            <img src="assets/img/services/Data-Stratagic-Asset-Banner-1.jpg" class="About Us Section Image" width="50%"
+              loading="lazy" />
 
           </div>
         </div>
@@ -180,26 +213,24 @@
       <div class="row mt-5 g-4" data-aos="fade-down" data-aos-delay="400">
         <div class="col-md-6">
           <div class="white-card">
-            <img src="./assets/img/data-engineering/Microsoft-Fabric.webp" alt="icon">
+            <img src="../assets/img/data-engineering/Microsoft-Fabric.webp" alt="icon" loading="lazy">
             <h4 class="mt-3 bold text-black">Microsoft Fabric Enterprise Solutions</h4>
             <p class="mt-2">Accelerate your data transformation with our Microsoft Fabric Enterprise Solutions. We help
               you unify your data estate using OneLake, integrating Data Engineering, Synapse Data Science, and
               Real-Time Analytics into a single SaaS foundation. From seamless Power BI reporting to AI-driven insights,
               we architect solutions that simplify complexity and maximize business value.</p>
-            <a href="./microsoft-fabric-enterprise-solutions" class="primary-btn-inverse">Learn More &nbsp; <i
-                class="bx bx-right-arrow-alt bx-sm btn-arrow-sec"></i></a>
+            <a href="./microsoft-fabric-enterprise-solutions" class="primary-btn-inverse">Learn More </a>
           </div>
         </div>
         <div class="col-md-6">
           <div class="white-card">
-            <img src="./assets/img/data-engineering/Databrick-lakehouse.webp" alt="icon">
+            <img src="../assets/img/data-engineering/Databrick-lakehouse.webp" alt="icon" loading="lazy">
             <h4 class="mt-3 bold text-black">Databricks Lakehouse Enterprise Solutions</h4>
             <p class="mt-2">Unlock the full potential of your data with our Databricks Lakehouse Enterprise Solutions.
               We provide end-to-end architecture and managed services across the entire ecosystem—from Delta Lake
               foundations and Unity Catalog governance to MLflow-driven MLOps. Whether you need high-performance SQL
               analytics or real-time streaming, we ensure deep integration across your cloud and BI tools.</p>
-            <a href="./databricks-lakehouse-enterprise-solutions" class="primary-btn-inverse">Learn More &nbsp; <i
-                class="bx bx-right-arrow-alt bx-sm btn-arrow-sec"></i></a>
+            <a href="./databricks-lakehouse-enterprise-solutions" class="primary-btn-inverse">Learn More </a>
           </div>
         </div>
       </div>
@@ -207,7 +238,7 @@
   </section>
 
 
-  <section id="approach" class="page-section">
+  <section id="approach1" class="page-section">
     <div class="container">
       <h2 class="section-title text-center" data-aos="fade-down" data-aos-delay="400">Our Approach to Data Engineering
       </h2>
@@ -218,8 +249,8 @@
         <div class="col-md-6">
           <div class="gray-card">
             <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
-            <video src="./assets/img/Altzor Homepage Icons mp4/02 Data Cloud.mp4" loop muted autoplay
-              class="video"></video>
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/Altzor Homepage Icons mp4/02 Data Cloud.mp4" loop muted
+              class="video lazy-video" playsinline></video>
             <p class="mt-3 bold text-black">Modern Data Platforms</p>
             <p class="mt-2">Cloud-native, scalable, and future-proof architectures.</p>
 
@@ -228,8 +259,8 @@
         <div class="col-md-6">
           <div class="gray-card">
             <!-- <img src="./assets/img/services/web-structure 1.svg" alt="icon"> -->
-            <video src="./assets/img/Altzor Homepage Icons mp4/Web Structure.mp4" loop muted autoplay
-              class="video"></video>
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/Altzor Homepage Icons mp4/Web Structure.mp4" loop muted
+              class="video lazy-video" playsinline></video>
             <p class="mt-3 bold text-black">Data Pipelines & Integration</p>
             <p class="mt-2">Real-time ingestion, transformation, and orchestration.</p>
 
@@ -238,8 +269,8 @@
         <div class="col-md-6">
           <div class="gray-card">
             <!-- <img src="./assets/img/services/11-Artificial-intelligence.gif" alt="icon" width="15%"> -->
-            <video src="./assets/img/Altzor Homepage Icons mp4/11 Artificial intelligence.mp4" loop muted autoplay
-              class="video"></video>
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/Altzor Homepage Icons mp4/11 Artificial intelligence.mp4" loop muted
+              class="video lazy-video" playsinline></video>
             <p class="mt-3 bold text-black">AI-Ready Data</p>
             <p class="mt-2">Structuring and enriching data for analytics, ML, and generative AI.</p>
 
@@ -248,7 +279,8 @@
         <div class="col-md-6">
           <div class="gray-card">
             <!-- <img src="./assets/img/services/secure 1.svg" alt="icon"> -->
-            <video src="./assets/img/Altzor Homepage Icons mp4/Secure.mp4" loop muted autoplay class="video"></video>
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/Altzor Homepage Icons mp4/Secure.mp4" loop muted class="video lazy-video"
+              playsinline></video>
             <p class="mt-3 bold text-black">Trust & Governance</p>
             <p class="mt-2">Built with security, compliance, and data quality at the core.</p>
 
@@ -259,50 +291,464 @@
     </div>
   </section>
 
-  <section id="gain" class="page-section">
-    <h2 class="section-title text-center" data-aos="fade-down" data-aos-delay="400">What You Gain</h2>
-    <h4 class="supporting-title text-center px-5" data-aos="fade-down" data-aos-delay="400">Clear benefits that drive
-      real impact for your business.</h4>
+  <section id="approach2" class="page-section">
+    <div class="container">
+      <h2 class="section-title text-center" data-aos="fade-down" data-aos-delay="400">Our Approach: Greenfield vs
+        Migration
+      </h2>
+      <h4 class="supporting-title text-center" data-aos="fade-down" data-aos-delay="400">
+        Whether building new data
+        platforms or migrating existing systems, we deliver<br> proven methodologies for both Microsoft Fabric and
+        Databricks scenarios
+      </h4>
+      <div class="row pt-5 g-4" data-aos="fade-down" data-aos-delay="400">
+        <div class="col-md-6">
+          <div class="gray-card">
+            <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/data-engineering/4.mp4" loop muted class="video lazy-video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Greenfield Data Platform</p>
+            <p class="mt-2">Build modern data foundations from scratch with cloud-native design, AI-first capabilities,
+              and unified governance across Microsoft Fabric and Databricks ecosystems.</p>
+            <ul class="mt-3">
+              <li>Cloud-native architecture with multi-region deployment strategies</li>
+              <li>Unity Catalog (Databricks) and Purview (Fabric) governance implemented from day one</li>
+              <li>Modern data mesh patterns with domain-driven design</li>
+              <li>MLOps pipelines and feature stores built into the foundation</li>
+              <li>Cost-optimized compute with serverless and spot instance strategies</li>
+              <li>Real-time streaming analytics architecture</li>
+              <li>Advanced security with zero-trust network design</li>
+              <li>Automated data quality and monitoring frameworks</li>
+            </ul>
 
-    <div class="container  mt-5">
-      <div class="backdrop-img1 service-2">
-
-        <div class="row g-5  d-flex justify-content-center align-items-center g-0" data-aos="fade-down"
-          data-aos-delay="400">
-          <div class="col-md-6">
-            <div class="strips gap-3">
-              <img src="./assets/img/services/unified.svg" alt="icons" class="default-img">
-              <img src="./assets/img/services/unified-inv.svg" alt="icons" class="hover-img">
-              <p class="text-black">Unified, trusted view of your enterprise data</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="strips gap-3">
-              <img src="./assets/img/services/aiml.svg" alt="icons" class="default-img">
-              <img src="./assets/img/services/aiml-inv.svg" alt="icons" class="hover-img">
-              <p class="text-black">AI/ML-ready data pipelines that accelerate innovation</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="strips gap-3">
-              <img src="./assets/img/services/faster-insights.svg" alt="icons" class="default-img">
-              <img src="./assets/img/services/faster-insights-inv.svg" alt="icons" class="hover-img">
-              <p class="text-black">Faster insights with reduced operational overhead</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="strips gap-3">
-              <img src="./assets/img/services/data-platforms.svg" alt="icons" class="default-img">
-              <img src="./assets/img/services/data-platforms-inv.svg" alt="icons" class="hover-img">
-              <p class="text-black">Data platforms designed to scale globally</p>
-            </div>
           </div>
         </div>
-      </div>
 
+        <div class="col-md-6">
+          <div class="gray-card">
+            <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/data-engineering/8.mp4" loop muted class="video lazy-video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Platform Migration</p>
+            <p class="mt-2">Migrate from legacy systems, cloud data warehouses, or other platforms with zero-downtime
+              strategies and business continuity assurance across both platforms.</p>
+            <ul class="mt-3">
+              <li>Automated migration from Snowflake, BigQuery, Azure Synapse, Teradata</li>
+              <li>Hadoop/on-premises migrations with data validation frameworks</li>
+              <li>Parallel run strategies ensuring zero business disruption</li>
+              <li>Schema evolution and data format conversion automation</li>
+              <li>Performance validation and query optimization during migration</li>
+              <li>Legacy system sunset planning and decommissioning</li>
+              <li>Training and change management for seamless adoption</li>
+              <li>Cost comparison and ROI validation throughout migration</li>
+            </ul>
+
+          </div>
+        </div>
+
+
+
+
+      </div>
     </div>
   </section>
 
+  <section id="approach3" class="page-section">
+    <div class="container">
+      <h2 class="section-title text-center" data-aos="fade-down" data-aos-delay="400">Accelerators & Industry Solutions
+      </h2>
+      <h4 class="supporting-title text-center" data-aos="fade-down" data-aos-delay="400">Pre-built templates,
+        industry-specific solutions, and proven frameworks to<br> accelerate delivery and reduce risk across both
+        platforms
+      </h4>
+      <div class="row pt-5 g-4" data-aos="fade-down" data-aos-delay="400">
+        <div class="col-md-4">
+          <div class="gray-card">
+            <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/data-engineering/9.mp4" loop muted class="video lazy-video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Platform Starter Kits</p>
+            <p class="mt-2">Production-ready landing zones with IaC templates, security baselines, and governance
+              patterns for rapid enterprise deployment.</p>
+            <ul class="mt-3">
+              <li>Fabric: Pre-configured OneLake landing zones and identity patterns</li>
+              <li>Databricks: Terraform modules for multi-cloud deployment</li>
+              <li>Network and policy templates for rapid compliance</li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="gray-card">
+            <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/data-engineering/3.mp4" loop muted class="video lazy-video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Financial Services Accelerator</p>
+            <p class="mt-2">Risk analytics, regulatory reporting, and fraud detection solutions built on both platforms
+              with financial industry compliance frameworks.</p>
+            <ul class="mt-3">
+              <li>Real-time fraud detection with MLflow model deployment</li>
+              <li>Regulatory reporting automation for Basel III, CCAR, and Solvency II</li>
+              <li>Market risk and credit risk analytics with unified data foundations</li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="gray-card">
+            <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/data-engineering/5.mp4" loop muted class="video lazy-video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Healthcare & Life Sciences</p>
+            <p class="mt-2">HIPAA-compliant data platforms for clinical analytics, drug discovery, and population health
+              with integrated genomics and imaging workflows.</p>
+            <ul class="mt-3">
+              <li>Clinical data platforms with FHIR standards integration</li>
+              <li>Genomics analysis pipelines with Delta Lake optimization</li>
+              <li>Real-world evidence platforms for pharmaceutical outcomes research</li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="gray-card">
+            <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/data-engineering/6.mp4" loop muted class="video lazy-video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Manufacturing & IoT</p>
+            <p class="mt-2">Industrial IoT analytics, predictive maintenance, and supply chain optimization with
+              real-time streaming and edge integration.</p>
+            <ul class="mt-3">
+              <li>Predictive maintenance models with sensor data streaming</li>
+              <li>Supply chain visibility with automated data pipelines</li>
+              <li>Quality analytics and root cause analysis frameworks</li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="gray-card">
+            <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/data-engineering/10.mp4" loop muted class="video lazy-video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Retail & E-commerce</p>
+            <p class="mt-2">Customer 360, personalization engines, and demand forecasting with real-time recommendation
+              systems and inventory optimization.</p>
+            <ul class="mt-3">
+              <li>Real-time personalization with collaborative filtering models</li>
+              <li>Demand forecasting with time series analysis and external data</li>
+              <li>Customer lifetime value modeling with unified data foundation</li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="gray-card">
+            <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/data-engineering/7.mp4" loop muted class="video lazy-video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">MLOps & AI Templates</p>
+            <p class="mt-2">Pre-integrated ML pipelines, model monitoring, and production deployment frameworks for
+              enterprise AI adoption at scale.</p>
+            <ul class="mt-3">
+              <li>CI/CD pipelines for model deployment with MLflow integration</li>
+              <li>A/B testing frameworks for model performance validation</li>
+              <li>Model drift detection and automated retraining workflows</li>
+            </ul>
+
+          </div>
+        </div>
+
+        <!-- <div class="col-md-4">
+          <div class="gray-card">
+
+            <video src="./assets/img/services/Structured Streaming.mp4" loop muted autoplay class="video"></video>
+            <p class="mt-3 bold text-black">Structured Streaming</p>
+            <p class="mt-2">Real-time stream processing with exactly-once guarantees, watermarking, and low-latency
+              analytics for operational intelligence.</p>
+            <ul class="mt-3">
+              <li>Kafka, Kinesis, and Event Hub connectors for multi-cloud streaming</li>
+              <li>Stateful stream processing with tumbling and sliding windows</li>
+              <li>Real-time anomaly detection and alerting capabilities</li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="gray-card">
+            <video src="./assets/img/services/Partner Ecosystem.mp4" loop muted autoplay class="video"></video>
+            <p class="mt-3 bold text-black">Partner Ecosystem</p>
+            <p class="mt-2">Integrate with leading cloud services, BI tools, and data platforms through native
+              connectors and APIs for comprehensive data ecosystems.</p>
+            <ul class="mt-3">
+              <li>Native cloud integrations: AWS, Azure, GCP services</li>
+              <li>Enterprise connectors for SAP, Salesforce, Oracle, and legacy systems</li>
+              <li>Open APIs and REST endpoints for custom integrations</li>
+            </ul>
+
+          </div>
+        </div> -->
+
+
+      </div>
+    </div>
+  </section>
+
+  <section id="whatyougain" class="page-section">
+    <div class="container">
+
+      <h2 class="section-title text-white text-center">What You Gain</h2>
+      <p class="supporting-title text-white text-center">Clear benefits that drive real impact for your business.</p>
+
+      <div class="timeline mt-5 pt-5">
+
+        <!-- 01 -->
+        <div class="row timeline-row">
+          <div class="col-md-6 left">
+            <div class="card-box">
+              <div class="step">01.</div>
+              <b>Strategic Assessment & Planning</b>
+              <p class="mt-2">Executive workshops, current-state analysis, and business case development with quantified
+                ROI projections and risk mitigation strategies. Platform selection guidance between Microsoft Fabric and
+                Databricks based on enterprise requirements.</p>
+            </div>
+          </div>
+          <div class="col-md-6"></div>
+        </div>
+
+        <!-- 02 -->
+        <div class="row timeline-row">
+          <div class="col-md-6"></div>
+          <div class="col-md-6 right">
+            <div class="card-box">
+              <div class="step">02.</div>
+              <b>Platform Architecture Design</b>
+              <p class="mt-2">Target-state architecture with unified governance (Unity Catalog for Databricks, Purview
+                for Fabric), multi-cloud strategies, security frameworks, and cost optimization blueprints tailored to
+                selected platform.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="row timeline-row">
+          <div class="col-md-6 left">
+            <div class="card-box">
+              <div class="step">03.</div>
+              <b>Platform Foundation Build</b>
+              <p class="mt-2">Infrastructure-as-code deployment, Delta Lake setup (Databricks) or OneLake setup
+                (Fabric), governance configuration, and automated CI/CD pipelines for scalable operations.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6"></div>
+        </div>
+
+        <!-- 04 -->
+        <div class="row timeline-row">
+          <div class="col-md-6"></div>
+          <div class="col-md-6 right">
+            <div class="card-box">
+              <div class="step">04.</div>
+              <b>Pilot Implementation</b>
+              <p class="mt-2">High-value use case deployment, performance validation, user training, and success metrics
+                measurement to prove business value and platform capabilities.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 -->
+        <div class="row timeline-row">
+          <div class="col-md-6 left">
+            <div class="card-box">
+              <div class="step">05.</div>
+              <b>Enterprise Rollout</b>
+              <p class="mt-2">Phased migration with automated data validation, change management, stakeholder
+                enablement, and business continuity assurance across the selected platform ecosystem.</p>
+            </div>
+          </div>
+          <div class="col-md-6"></div>
+        </div>
+
+        <!-- 06 -->
+        <div class="row timeline-row">
+          <div class="col-md-6"></div>
+          <div class="col-md-6 right">
+            <div class="card-box">
+              <div class="step">06.</div>
+              <b>Optimize & Scale</b>
+              <p class="mt-2">Managed operations, continuous cost optimization, advanced analytics enablement, and AI/ML
+                capability expansion planning for long-term platform success.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="approach3" class="page-section">
+    <div class="container">
+      <h2 class="section-title text-center" data-aos="fade-down" data-aos-delay="400">Competitive Advantages
+      </h2>
+      <h4 class="supporting-title text-center" data-aos="fade-down" data-aos-delay="400">Why enterprises choose us as
+        their data platform implementation and migration partner
+      </h4>
+      <div class="row pt-5 g-4" data-aos="fade-down" data-aos-delay="400">
+        <div class="col-md-4">
+          <div class="gray-card">
+            <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/Altzor Homepage Icons mp4/Scalable Teams.mp4" loop muted
+              class="video lazy-video" playsinline></video>
+            <p class="mt-3 bold text-black">Elite Partnership Status</p>
+            <p class="mt-2">Microsoft Solutions Partner (Data & AI) and Databricks Elite Consulting Partner with the
+              highest technical competencies and proven delivery track record.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="gray-card">
+            <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/Altzor Homepage Icons mp4/Web Structure.mp4" loop muted
+              class="video lazy-video" playsinline></video>
+            <p class="mt-3 bold text-black">Accelerated Delivery</p>
+            <p class="mt-2">Proprietary accelerators and proven methodologies reduce implementation time by 60% compared
+              to traditional approaches across both platforms.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="gray-card">
+            <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/Altzor Homepage Icons mp4/Data & AI Acceleration.mp4" loop muted
+              class="video lazy-video" playsinline></video>
+            <p class="mt-3 bold text-black">Cost Optimization Guarantee</p>
+            <p class="mt-2">We guarantee measurable cost reduction through our FinOps frameworks and automated
+              optimization strategies for both Microsoft Fabric and Databricks.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="gray-card">
+            <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/Altzor Homepage Icons mp4/Secure.mp4" loop muted class="video lazy-video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Enterprise Security</p>
+            <p class="mt-2">Zero-trust security architecture with comprehensive compliance frameworks for regulated
+              industries across both platform ecosystems.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="gray-card">
+            <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/Altzor Homepage Icons mp4/36 Analytics.mp4" loop muted
+              class="video lazy-video" playsinline></video>
+            <p class="mt-3 bold text-black">Zero-Downtime Migration</p>
+            <p class="mt-2">Proven parallel-run strategies ensure business continuity during platform migrations and
+              system transitions across Microsoft and Databricks environments.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="gray-card">
+            <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/Altzor Homepage Icons mp4/11 Artificial intelligence.mp4" loop muted
+              class="video lazy-video" playsinline></video>
+            <p class="mt-3 bold text-black">AI-Ready Architecture</p>
+            <p class="mt-2">Future-proof platform designs that enable advanced analytics, generative AI, and machine
+              learning at enterprise scale across both ecosystems.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section id="gain" class="page-section">
+    <div class="container">
+      <h2 class="section-title text-center" data-aos="fade-down" data-aos-delay="400">Deep Technical Expertise</h2>
+      <h4 class="supporting-title text-center px-5" data-aos="fade-down" data-aos-delay="400">Cross-functional teams
+        with
+        comprehensive expertise across Microsoft Fabric, Databricks, and<br> data platform technologies</h4>
+
+      <div class="row pt-5 g-4" data-aos="fade-down" data-aos-delay="400">
+        <div class="col-md-6">
+          <div class="white-card">
+            <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/Altzor Homepage Icons mp4/20 Puzzle.mp4" loop muted
+              class="video lazy-video" playsinline></video>
+            <p class="mt-3 bold text-black">Platform Architecture</p>
+            <p class="mt-2">Delta Lake optimization, Unity Catalog design, OneLake foundations, multi-cloud strategies,
+              and performance tuning for enterprise-scale deployments.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="white-card">
+            <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/services/Unity Catalog Governance.mp4" loop muted
+              class="video lazy-video" playsinline></video>
+            <p class="mt-3 bold text-black">Platform Engineering</p>
+            <p class="mt-2">Infrastructure-as-code, automated deployment pipelines, monitoring solutions, and DevOps
+              best practices for reliable operations across both platforms.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="white-card">
+            <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/Altzor Homepage Icons mp4/Service Tools.mp4" loop muted
+              class="video lazy-video" playsinline></video>
+            <p class="mt-3 bold text-black">MLOps & Data Science</p>
+            <p class="mt-2">MLflow implementation, model lifecycle management, feature engineering, and production ML
+              pipeline development for both Microsoft Fabric and Databricks.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="white-card">
+            <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/services/SQL Alalytics.mp4" loop muted class="video lazy-video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Analytics & BI Integration</p>
+            <p class="mt-2">Power BI optimization, Databricks SQL tuning, BI tool connectivity, dashboard development,
+              and self-service analytics enablement.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="white-card">
+            <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/services/Trust Goverance.mp4" loop muted class="video lazy-video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Security & Governance</p>
+            <p class="mt-2">Unity Catalog and Purview implementation, data lineage, access controls, compliance
+              frameworks, and privacy-preserving analytics.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="white-card">
+            <!-- <img src="./assets/img/services/data-cloud 1.svg" alt="icon"> -->
+            <video src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAu1tZGF0AAACrQYF//+p3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE1MiByMjg1NCBlOWE1OTAzIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNyAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA" data-lazy-src="./assets/img/data-engineering/8.mp4" loop muted class="video lazy-video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Migration & Modernization</p>
+            <p class="mt-2">Legacy platform migrations, cloud modernization, data pipeline conversion, and application
+              refactoring for modern data platform architecture.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!--Footer Section Starts-->
   <div include="footer.html"></div>
@@ -314,6 +760,61 @@
   <script src="assets/js/common.js"></script>
   <!-- <script src="assets/js/header.js"></script> -->
   <script src="assets/js/home.js"></script>
+
+
+  <!-- Improved Lazy Loading Script for Videos -->
+  <script>
+    (function() {
+      'use strict';
+      
+      const lazyVideos = document.querySelectorAll('video.lazy-video');
+      
+      if ('IntersectionObserver' in window) {
+        const videoObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              const video = entry.target;
+              const source = video.getAttribute('data-lazy-src');
+              
+              if (source) {
+                // Set preload to auto for faster loading
+                video.preload = 'auto';
+                video.src = source;
+                video.load();
+                
+                video.addEventListener('loadeddata', function() {
+                  video.play().catch(function(error) {
+                    console.log('Video autoplay prevented:', error);
+                  });
+                });
+                
+                video.classList.remove('lazy-video');
+                videoObserver.unobserve(video);
+              }
+            }
+          });
+        }, {
+          rootMargin: '300px 0px',  // Start loading 300px before entering viewport
+          threshold: 0.01
+        });
+        
+        lazyVideos.forEach(function(video) {
+          videoObserver.observe(video);
+        });
+      } else {
+        lazyVideos.forEach(function(video) {
+          const source = video.getAttribute('data-lazy-src');
+          if (source) {
+            video.src = source;
+            video.load();
+            video.play().catch(function(error) {
+              console.log('Video autoplay prevented:', error);
+            });
+          }
+        });
+      }
+    })();
+  </script>
 
 </body>
 

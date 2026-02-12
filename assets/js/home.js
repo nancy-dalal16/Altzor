@@ -1,6 +1,32 @@
 // On Scroll Animation Initialization
 AOS.init();
 
+// Ensure video plays on mobile devices
+document.addEventListener('DOMContentLoaded', function() {
+  const video = document.querySelector('.hero-bg-video');
+  if (video) {
+    // Try to play the video
+    const playPromise = video.play();
+    
+    if (playPromise !== undefined) {
+      playPromise.catch(error => {
+        // Auto-play was prevented, try to play on user interaction
+        console.log('Autoplay prevented, will play on user interaction');
+        
+        // Play video on first user interaction
+        const playOnInteraction = function() {
+          video.play();
+          document.removeEventListener('touchstart', playOnInteraction);
+          document.removeEventListener('click', playOnInteraction);
+        };
+        
+        document.addEventListener('touchstart', playOnInteraction, { once: true });
+        document.addEventListener('click', playOnInteraction, { once: true });
+      });
+    }
+  }
+});
+
 (function () {
   /**
    * Should this anchor open the site modal?

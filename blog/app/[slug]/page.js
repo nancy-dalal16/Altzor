@@ -9,7 +9,9 @@ import { Calendar, Clock, User, ArrowLeft } from 'lucide-react'
 import BlogCard from '@/components/BlogCard'
 import BlogSidebar from '@/components/BlogSidebar'
 import ReadingProgressBar from '@/components/ReadingProgressBar'
+import DraftModeIndicator from '@/components/DraftModeIndicator'
 import { notFound } from 'next/navigation'
+import { draftMode } from 'next/headers'
 
 export const revalidate = 60 // ISR
 
@@ -34,7 +36,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   try {
     const { slug } = await params
-    const post = await getPost(slug)
+    const { isEnabled } = await draftMode()
+    const post = await getPost(slug, isEnabled)
     
     if (!post) {
       return {
@@ -62,7 +65,25 @@ export async function generateMetadata({ params }) {
         type: 'article',
         publishedTime: post.publishedAt,
         authors: post.author?.name ? [post.author.name] : [],
+        siteName: 'Altzor Blog',
+        locale: 'en_US',
+        url: `https://altzor.com/blog/${slug}`,
+        images: imageUrl ? [
+          {
+            url: imageUrl,
+            width: 1200,
+            height: 630,
+            alt: post.mainImage?.alt || post.title,
+          }
+        ] : [],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: post.title,
+        description: post.excerpt,
         images: imageUrl ? [imageUrl] : [],
+        creator: post.author?.twitter || '@Altzor',
+        site: '@Altzor',
       },
     }
   } catch (error) {
@@ -113,9 +134,9 @@ const getComponents = (headings) => ({
       return <h3 id={heading?.id} className="text-2xl font-bold mt-8 mb-3 text-gray-900 scroll-mt-24">{children}</h3>
     },
     h4: ({ children }) => <h4 className="text-xl font-bold mt-6 mb-2 text-gray-900">{children}</h4>,
-    normal: ({ children }) => <p className="text-gray-700 leading-relaxed mb-4">{children}</p>,
+    normal: ({ children }) => <p className=" leading-relaxed mb-4">{children}</p>,
     blockquote: ({ children }) => (
-      <blockquote className="border-l-4 border-primary pl-4 italic my-6 text-gray-700">
+      <blockquote className="border-l-4 border-primary pl-4 italic my-6">
         {children}
       </blockquote>
     ),
@@ -137,7 +158,8 @@ const getComponents = (headings) => ({
 
 export default async function BlogPostPage({ params }) {
   const { slug } = await params
-  const post = await getPost(slug)
+  const { isEnabled: isDraftMode } = await draftMode()
+  const post = await getPost(slug, isDraftMode)
 
   if (!post) {
     notFound()
@@ -168,79 +190,77 @@ export default async function BlogPostPage({ params }) {
 
   return (
     <article className="bg-white">
+      {/* Draft Mode Indicator */}
+      {isDraftMode && <DraftModeIndicator />}
+      
       {/* Reading Progress Bar */}
       <ReadingProgressBar />
       
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[hsl(238,63%,20%)] via-[hsl(238,63%,25%)] to-[hsl(238,63%,30%)] py-12 md:py-16">
+      {/* Minimal Hero Section with Image */}
+      <section className="relative bg-gray-50 border-b border-gray-200 py-12 md:py-16">
         <div className="container">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 transition-colors"
+            className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-6 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to Blog</span>
           </Link>
 
-          <div className="max-w-4xl">
-            {/* Title */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              {post.title}
-            </h1>
-
-            {/* Meta */}
-            <div className="flex flex-wrap items-center gap-6 text-white/90">
-              {/* {post.author && (
-                <div className="flex items-center gap-3">
-                  {post.author.image && (
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-white/20">
-                      <Image
-                        src={urlFor(post.author.image).width(48).height(48).url()}
-                        alt={post.author.name}
-                        fill
-                        sizes="48px"
-                        className="object-cover"
-                      />
-                    </div>
-                  )}
-                  <div>
-                    <p className="font-semibold">{post.author.name}</p>
-                    {post.author.jobTitle && (
-                      <p className="text-sm text-white/70">{post.author.jobTitle}</p>
-                    )}
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_500px] gap-8 md:gap-12">
+            {/* Left: Title and Meta */}
+            <div className="max-w-3xl">
+              {/* Categories */}
+              {post.categories && post.categories.length > 0 && (
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {post.categories.map((category) => (
+                    <Badge 
+                      key={category._id} 
+                      className="bg-gray-100 text-gray-700 px-3 py-1 text-sm font-medium  border-primary"
+                    >
+                      {category.title}
+                    </Badge>
+                  ))}
                 </div>
-              )} */}
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
-                <span>{format(new Date(post.publishedAt), 'MMMM dd, yyyy')}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
-                <span>{readTime} min read</span>
+              )}
+
+              {/* Title */}
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-6">
+                {post.title}
+              </h1>
+
+              {/* Meta */}
+              <div className="flex flex-wrap items-center gap-6 text-gray-600">
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4" />
+                  <span>{format(new Date(post.publishedAt), 'MMMM dd, yyyy')}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4" />
+                  <span>{readTime} min read</span>
+                </div>
               </div>
             </div>
+
+            {/* Right: Featured Image */}
+            {post.mainImage?.asset?._ref && (
+              <div className="relative w-full  rounded-2xl overflow-hidden   flex items-center justify-center">
+                <Image
+                  src={urlFor(post.mainImage).width(800).url()}
+                  alt={post.mainImage.alt || post.title}
+                  width={800}
+                  height={450}
+                  sizes="(max-width: 1024px) 100vw, 400px"
+                  className="w-full h-auto object-contain rounded-2xl border border-gray-200 bg-gray-100"
+                  priority
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      {/* Featured Image with Updated Style */}
-      {post.mainImage && (
-        <section className="container -mt-8 md:-mt-12">
-          <div className="relative w-full h-[300px] md:h-[450px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-            <Image
-              src={urlFor(post.mainImage).width(1200).height(600).url()}
-              alt={post.mainImage.alt || post.title}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1200px"
-              className="object-cover"
-              priority
-            />
-            {/* Subtle gradient overlay for better aesthetics */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-          </div>
-        </section>
-      )}
+
 
       {/* Content with Sidebar */}
       <section className="container py-12 md:py-16">
@@ -248,6 +268,7 @@ export default async function BlogPostPage({ params }) {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-8 lg:gap-12">
             {/* Main Content */}
             <div className="prose prose-lg max-w-none">
+             
               <PortableText value={post.body} components={getComponents(headings)} />
             </div>
 
@@ -261,9 +282,9 @@ export default async function BlogPostPage({ params }) {
 
       {/* Related Posts */}
       {relatedPosts && relatedPosts.length > 0 && (
-        <section className="bg-muted py-16 md:py-20">
+        <section className="bg-white border-t border-gray-100 py-16 md:py-20">
           <div className="container">
-            <h2 className="section-title text-center mb-12">Related Posts</h2>
+            <h2 className="section-title text-center mb-12 text-secondary">Related Posts</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {relatedPosts.map((relatedPost) => (
                 <BlogCard key={relatedPost._id} post={relatedPost} />

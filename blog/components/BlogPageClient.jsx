@@ -118,9 +118,9 @@ export default function BlogPageClient({ initialPosts, categories, featuredPosts
       {!searchQuery && !selectedCategory && featuredPost && (
         <section className="bg-gray-50 py-12 md:py-16">
           <div className="container">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-8 lg:gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-8 lg:gap-12 items-stretch">
               {/* Featured Story */}
-              <div>
+              <div className="flex flex-col">
                 <div className="flex items-center gap-2 mb-6">
                   <div className="w-1 h-6 bg-primary rounded-full" />
                   <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider">Featured Story</h2>
@@ -129,12 +129,12 @@ export default function BlogPageClient({ initialPosts, categories, featuredPosts
               </div>
 
               {/* What's New Sidebar */}
-              <div>
-                <div className="flex items-center gap-2 mb-6 pt-16 md:pt-0">
+              <div className="flex flex-col">
+                <div className="flex items-center gap-2 mb-6 pt-8 lg:pt-0">
                   <div className="w-1 h-6 bg-primary rounded-full" />
                   <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider">What's New</h2>
                 </div>
-                <div className="bg-white rounded-2xl border border-gray-200 p-4 md:p-6 space-y-4">
+                <div className="bg-white rounded-2xl border border-gray-200 p-4 md:p-6 space-y-4 flex-1 flex flex-col justify-between">
                   {recentPosts.map((post) => (
                     <BlogCard key={post._id} post={post} variant="sidebar" />
                   ))}

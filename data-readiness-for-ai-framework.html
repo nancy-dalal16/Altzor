@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Altzor — Data Readiness for AI</title>
+  <link rel="stylesheet" href="assets/css/data-readiness-for-ai-framework.css">
+</head>
+
+<body>
+
+  <div id="loader">
+    <div class="loader-gradient-ring"></div>
+  </div>
+  <div class="page">
+
+    <!-- ── HERO HEADER ── -->
+    <div class="p1-header">
+      <div class="p1-blob1"></div>
+      <div class="p1-blob2"></div>
+      <div class="p1-blob3"></div>
+      <div class="p1-blob4"></div>
+      <div class="p1-blob5"></div>
+
+      <div class="container-inner p1-header-content">
+        <!-- Brand Logo Recreation -->
+        <div class="logo-lockup">
+          <!-- Data-dots icon from brand mark -->
+          <svg class="logo-dots-svg" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="7" r="3.5" fill="#df6719" />
+            <circle cx="11" cy="16" r="3" fill="#df6719" opacity="0.9" />
+            <circle cx="21" cy="16" r="3" fill="#df6719" opacity="0.9" />
+            <circle cx="7" cy="24" r="2.5" fill="#df6719" opacity="0.75" />
+            <circle cx="16" cy="24" r="2.5" fill="#df6719" opacity="0.75" />
+            <circle cx="25" cy="24" r="2.5" fill="#df6719" opacity="0.75" />
+            <line x1="16" y1="10.5" x2="11" y2="13" stroke="#df6719" stroke-width="1" opacity="0.5" />
+            <line x1="16" y1="10.5" x2="21" y2="13" stroke="#df6719" stroke-width="1" opacity="0.5" />
+            <line x1="11" y1="19" x2="7" y2="21.5" stroke="#df6719" stroke-width="1" opacity="0.5" />
+            <line x1="11" y1="19" x2="16" y2="21.5" stroke="#df6719" stroke-width="1" opacity="0.5" />
+            <line x1="21" y1="19" x2="16" y2="21.5" stroke="#df6719" stroke-width="1" opacity="0.5" />
+            <line x1="21" y1="19" x2="25" y2="21.5" stroke="#df6719" stroke-width="1" opacity="0.5" />
+          </svg>
+          <span class="logo-wordmark">altz<span class="orange">ö</span>r</span>
+        </div>
+
+        <div class="header-series">Enterprise AI Readiness Series &nbsp;·&nbsp; Framework Brief 2026</div>
+        <div class="header-main-title">
+          Data Readiness<br>for <span class="accent">AI</span>
+        </div>
+        <div class="header-sub">
+          A structured framework for assessing, scoring, and accelerating an organization's data capability to support
+          confident, trustworthy AI decisions at scale.
+        </div>
+        <a href="#" class="cta-btn" onclick="openHubspotModal(event)" style="margin-top: 20px;">Get the PDF →</a>
+      </div>
+
+      <div class="header-badge">Framework Overview</div>
+    </div>
+
+    <!-- Stat Strip -->
+    <div class="stat-strip">
+      <div class="container-inner" style="display: flex; flex-wrap: wrap; width: 100%;">
+        <div class="stat-cell">
+          <div class="stat-val">5</div>
+          <div class="stat-lbl">Readiness Pillars</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-val">3</div>
+          <div class="stat-lbl">Readiness Bands</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-val">4</div>
+          <div class="stat-lbl">Metric Categories</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-val">30–90</div>
+          <div class="stat-lbl">Day Execution Sprints</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="p1-body container-inner">
+
+      <!-- Problem intro -->
+      <div style="margin-bottom: 20px;">
+        <div class="sec-eyebrow">The Problem</div>
+        <div class="sec-title">Most enterprises are data-rich but AI-poor</div>
+        <div class="intro-grid">
+          <div class="intro-text">
+            Enterprises today face growing pressure to adopt AI—particularly generative AI—yet many struggle to
+            translate intent into outcomes. While investments focus on tools and platforms, experience consistently
+            shows that <strong>AI success is determined by the underlying data</strong>.
+            <br><br>
+            Enterprise data environments were built for reporting, transactions, and compliance. AI demands something
+            different: context, semantics, freshness, and governance that <em>enables</em> access rather than restricts
+            it.
+          </div>
+          <div class="callout">
+            <div class="callout-q">
+              "The organization's ability to provide data that is sufficiently aligned, qualified, and governed to
+              support AI-driven decisions with confidence."
+            </div>
+            <div class="callout-attr">Altzor's definition of Data Readiness for AI</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 Pillars -->
+      <div class="sec-eyebrow">The Framework</div>
+      <div class="sec-title">Five Data Readiness Pillars</div>
+
+      <div class="pillars-row">
+        <div class="pillar p1c">
+          <div class="pillar-stripe"></div>
+          <div class="pillar-body">
+            <div class="pillar-icon-wrap">
+              <svg viewBox="0 0 14 14" fill="none">
+                <circle cx="4" cy="7" r="2" fill="#df6719" />
+                <circle cx="10" cy="4" r="1.5" fill="#df6719" opacity="0.7" />
+                <circle cx="10" cy="10" r="1.5" fill="#df6719" opacity="0.5" />
+                <line x1="6" y1="6.5" x2="8.5" y2="4.5" stroke="#df6719" stroke-width="1" />
+                <line x1="6" y1="7.5" x2="8.5" y2="9.5" stroke="#df6719" stroke-width="1" />
+              </svg>
+            </div>
+            <div class="pillar-num">Pillar 01</div>
+            <div class="pillar-name">AI Signal Availability</div>
+            <div class="pillar-desc">Are the right business signals captured, retained, and accessible? Evaluates event
+              coverage, historical depth, and manual data dependencies.</div>
+          </div>
+        </div>
+
+        <div class="pillar p2c">
+          <div class="pillar-stripe"></div>
+          <div class="pillar-body">
+            <div class="pillar-icon-wrap">
+              <svg viewBox="0 0 14 14" fill="none">
+                <path d="M2 9 L5 6 L8 8 L12 4" stroke="#2563EB" stroke-width="1.5" fill="none" stroke-linecap="round" />
+                <circle cx="2" cy="9" r="1.5" fill="#2563EB" />
+                <circle cx="12" cy="4" r="1.5" fill="#2563EB" />
+              </svg>
+            </div>
+            <div class="pillar-num">Pillar 02</div>
+            <div class="pillar-name">Data Trust & Quality</div>
+            <div class="pillar-desc">Does the organization trust data enough to act on AI outputs? Examines consistency,
+              reconciliation frequency, and ownership clarity.</div>
+          </div>
+        </div>
+
+        <div class="pillar p3c">
+          <div class="pillar-stripe"></div>
+          <div class="pillar-body">
+            <div class="pillar-icon-wrap">
+              <svg viewBox="0 0 14 14" fill="none">
+                <circle cx="7" cy="7" r="4.5" stroke="#7C3AED" stroke-width="1.5" fill="none" />
+                <path d="M7 4.5 L7 7 L9.5 7" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="pillar-num">Pillar 03</div>
+            <div class="pillar-name">Data Freshness & Flow</div>
+            <div class="pillar-desc">How quickly does data move from event to availability? Measures pipeline latency,
+              batch vs. real-time, and decision-cycle alignment.</div>
+          </div>
+        </div>
+
+        <div class="pillar p4c">
+          <div class="pillar-stripe"></div>
+          <div class="pillar-body">
+            <div class="pillar-icon-wrap">
+              <svg viewBox="0 0 14 14" fill="none">
+                <rect x="2" y="2" width="4" height="4" rx="1" fill="#0EA5A0" opacity="0.9" />
+                <rect x="8" y="2" width="4" height="4" rx="1" fill="#0EA5A0" opacity="0.6" />
+                <rect x="2" y="8" width="4" height="4" rx="1" fill="#0EA5A0" opacity="0.6" />
+                <rect x="8" y="8" width="4" height="4" rx="1" fill="#0EA5A0" opacity="0.4" />
+              </svg>
+            </div>
+            <div class="pillar-num">Pillar 04</div>
+            <div class="pillar-name">AI-Ready Data Platform</div>
+            <div class="pillar-desc">Can the platform sustain AI workloads beyond pilots? Assesses scalability, ML tool
+              integration, and cost predictability.</div>
+          </div>
+        </div>
+
+        <div class="pillar p5c">
+          <div class="pillar-stripe"></div>
+          <div class="pillar-body">
+            <div class="pillar-icon-wrap">
+              <svg viewBox="0 0 14 14" fill="none">
+                <path d="M7 1.5 L12 4 L12 8 C12 11 7 13 7 13 C7 13 2 11 2 8 L2 4 Z" stroke="#16A34A" stroke-width="1.5"
+                  fill="none" />
+                <path d="M4.5 7 L6.5 9 L10 5" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" fill="none" />
+              </svg>
+            </div>
+            <div class="pillar-num">Pillar 05</div>
+            <div class="pillar-name">Governance, Access & Safety</div>
+            <div class="pillar-desc">Can AI access data responsibly? Examines ownership, role-based access, lineage,
+              privacy constraints, and AI guardrails.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Why It Matters -->
+      <div class="sec-eyebrow">Why It Matters</div>
+      <div class="why-row">
+        <div class="why-card">
+          <div class="why-icon">🎯</div>
+          <div class="why-title">Use-Case Specific</div>
+          <div class="why-text">Readiness is not universal — evaluated relative to actual AI decisions and outcomes, not
+            abstract maturity models.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">📊</div>
+          <div class="why-title">Confidence to Act</div>
+          <div class="why-text">Measured by whether AI outputs can be trusted and acted upon — not by data volume or
+            theoretical completeness.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🔄</div>
+          <div class="why-title">Continuously Evolving</div>
+          <div class="why-text">A living capability that must be tracked, improved, and sustained as AI use cases and
+            business priorities change.</div>
+        </div>
+      </div>
+
+    </div> <!-- end p1-body -->
+
+    <!-- Mid Page Header Section -->
+    <div class="p2-header">
+      <div class="p2-blob1"></div>
+      <div class="p2-blob2"></div>
+      <div class="container-inner p2-head-row">
+        <div>
+          <div class="p2-title">Assessment, Scoring &amp; Action</div>
+          <div class="p2-sub">How Altzor moves organizations from assumption to evidence — and from evidence to impact
+          </div>
+        </div>
+        <div class="p2-bc">altzor &nbsp;·&nbsp; 2026<br>Data Readiness for AI</div>
+      </div>
+    </div>
+
+    <div class="container-inner">
+      <!-- Methodology -->
+      <div class="method-sect">
+        <div class="sec-eyebrow sec-eyebrow-center">Assessment Methodology</div>
+        <div class="sec-title text-center" style="text-align: center;">Three inputs. One clear picture.</div>
+        <div class="method-flow">
+          <div class="method-card">
+            <div class="m-num">1</div>
+            <div class="m-label">Structured Questionnaire</div>
+            <div class="m-desc">Curated questions mapped to each pillar using scaled responses to surface real operating
+              realities.</div>
+          </div>
+          <div class="method-arrow">›</div>
+          <div class="method-card">
+            <div class="m-num">2</div>
+            <div class="m-label">Stakeholder Interviews</div>
+            <div class="m-desc">Cross-functional discussions across business, data, and platform teams. Disagreement is
+              treated as signal.</div>
+          </div>
+          <div class="method-arrow">›</div>
+          <div class="method-card">
+            <div class="m-num">3</div>
+            <div class="m-label">Data Walkthroughs</div>
+            <div class="m-desc">High-level review of key data sources, pipelines, and platform to confirm availability,
+              flow, and AI readiness.</div>
+          </div>
+          <div class="method-arrow">›</div>
+          <div class="method-card highlight">
+            <div class="m-num">✓</div>
+            <div class="m-label">Triangulated Output</div>
+            <div class="m-desc">Business expectations vs. data reality vs. platform constraints — validated to eliminate
+              optimism bias.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Readiness Bands -->
+      <div class="bands-sect">
+        <div class="sec-eyebrow sec-eyebrow-center">Scoring & Interpretation</div>
+        <div class="sec-title" style="text-align: center;">Three readiness bands. One language for leadership.</div>
+        <div class="bands-grid">
+          <div class="band band-now">
+            <div class="band-head">
+              <div class="band-dot"></div>
+              <div class="band-label">AI-Now</div>
+            </div>
+            <div class="band-body">
+              <div class="band-meaning">Data is ready to support AI in the near term.</div>
+              <ul class="band-list">
+                <li>Business signals consistently accessible</li>
+                <li>Data quality issues known & manageable</li>
+                <li>Platform sustains AI beyond pilots</li>
+                <li>Governance enables controlled access</li>
+              </ul>
+              <div class="band-impl">→ Proceed with measured confidence; validate per use case</div>
+            </div>
+          </div>
+          <div class="band band-next">
+            <div class="band-head">
+              <div class="band-dot"></div>
+              <div class="band-label">AI-Next</div>
+            </div>
+            <div class="band-body">
+              <div class="band-meaning">Strong potential, but gaps must be addressed first.</div>
+              <ul class="band-list">
+                <li>Core data exists, trust is inconsistent</li>
+                <li>Manual reconciliation is common</li>
+                <li>Platform scalability uncertain</li>
+                <li>Governance unevenly applied</li>
+              </ul>
+              <div class="band-impl">→ Targeted readiness improvements before AI investment</div>
+            </div>
+          </div>
+          <div class="band band-later">
+            <div class="band-head">
+              <div class="band-dot"></div>
+              <div class="band-label">AI-Later</div>
+            </div>
+            <div class="band-body">
+              <div class="band-meaning">Foundational data constraints limit AI feasibility.</div>
+              <ul class="band-list">
+                <li>Key signals missing or inaccessible</li>
+                <li>Data quality widely questioned</li>
+                <li>Platform not suited for AI workloads</li>
+                <li>Governance blocks timely access</li>
+              </ul>
+              <div class="band-impl">→ Defer AI investment; prioritize data remediation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Execution Workstreams -->
+      <div class="exec-sect">
+        <div class="sec-eyebrow">From Assessment to Action</div>
+        <div class="sec-title">Five modular execution workstreams</div>
+        <div class="exec-row">
+          <div class="exec-card ec1">
+            <div class="ec-num">WS 01</div>
+            <div class="ec-name">Data Signal Enablement</div>
+            <div class="ec-outcome">Improve coverage of critical business signals for AI learning</div>
+          </div>
+          <div class="exec-card ec2">
+            <div class="ec-num">WS 02</div>
+            <div class="ec-name">Trust & Quality Improvement</div>
+            <div class="ec-outcome">Address high-impact quality issues; establish authoritative sources</div>
+          </div>
+          <div class="exec-card ec3">
+            <div class="ec-num">WS 03</div>
+            <div class="ec-name">Flow & Latency Optimization</div>
+            <div class="ec-outcome">Remove bottlenecks; align data delivery to decision cycles</div>
+          </div>
+          <div class="exec-card ec4">
+            <div class="ec-num">WS 04</div>
+            <div class="ec-name">AI-Ready Platform</div>
+            <div class="ec-outcome">Scale infrastructure to sustain AI workloads beyond pilots</div>
+          </div>
+          <div class="exec-card ec5">
+            <div class="ec-num">WS 05</div>
+            <div class="ec-name">Governance & Safe AI</div>
+            <div class="ec-outcome">Streamline access; establish guardrails for responsible AI use</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Journey -->
+      <div class="journey-sect">
+        <div class="sec-eyebrow">Where This Fits</div>
+        <div class="sec-title">Step one of a responsible AI journey</div>
+        <div class="journey-row">
+          <div class="j-step j-active">
+            <div class="j-badge">You Are Here</div>
+            <div class="j-num">Step 1</div>
+            <div class="j-label">Data Readiness for AI</div>
+            <div class="j-desc">Can our data support AI decisions with confidence?</div>
+          </div>
+          <div class="j-arrow">›</div>
+          <div class="j-step j-inactive">
+            <div class="j-num">Step 2</div>
+            <div class="j-label">AI Readiness & Use Case Prioritization</div>
+            <div class="j-desc">Where will AI deliver measurable business value?</div>
+          </div>
+          <div class="j-arrow">›</div>
+          <div class="j-step j-inactive">
+            <div class="j-num">Step 3</div>
+            <div class="j-label">AI Execution & Scaling</div>
+            <div class="j-desc">Deploy and scale on a proven data foundation</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-sect">
+        <div class="cta-box">
+          <div class="cta-blob1"></div>
+          <div class="cta-blob2"></div>
+          <div style="position: relative; z-index: 1;">
+            <div class="cta-title">Begin your Data Readiness Assessment</div>
+            <div class="cta-sub">Gain a clear, evidence-based view of your organization's AI readiness before committing
+              to platform investments or scaled deployments.</div>
+            <a href="#" class="cta-btn" onclick="openHubspotModal(event)">Get the PDF →</a>
+          </div>
+          <div class="cta-bullets" style="position: relative; z-index: 1;">
+            <div class="cta-b">
+              <div class="cta-b-dot"></div>
+              <div class="cta-b-text">Technology-agnostic methodology</div>
+            </div>
+            <div class="cta-b">
+              <div class="cta-b-dot"></div>
+              <div class="cta-b-text">Executive-ready outputs & scorecards</div>
+            </div>
+            <div class="cta-b">
+              <div class="cta-b-dot"></div>
+              <div class="cta-b-text">Clear remediation roadmap</div>
+            </div>
+            <div class="cta-b">
+              <div class="cta-b-dot"></div>
+              <div class="cta-b-text">30–90 day execution sprints</div>
+            </div>
+            <div class="cta-b">
+              <div class="cta-b-dot"></div>
+              <div class="cta-b-text">Applicable across all industries</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- End Container Inner -->
+
+    <!-- Footer -->
+    <div class="p2-foot">
+      <div class="container-inner">
+        <div class="foot-brand">
+          <svg viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="3" r="2" fill="#df6719" />
+            <circle cx="4" cy="8" r="1.5" fill="#df6719" opacity="0.8" />
+            <circle cx="10" cy="8" r="1.5" fill="#df6719" opacity="0.8" />
+            <circle cx="2" cy="12" r="1.2" fill="#df6719" opacity="0.6" />
+            <circle cx="7" cy="12" r="1.2" fill="#df6719" opacity="0.6" />
+            <circle cx="12" cy="12" r="1.2" fill="#df6719" opacity="0.6" />
+          </svg>
+          <span class="foot-brand-name">altzor</span>
+        </div>
+        <div class="foot-tagline">This framework represents Altzor's point of view on enterprise AI readiness
+          &nbsp;·&nbsp; altzor.com</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- HubSpot Form Modal -->
+  <div id="hubspotModal" class="hs-modal-overlay">
+    <div class="hs-modal-content">
+      <button class="hs-modal-close" onclick="closeHubspotModal()" aria-label="Close modal">&times;</button>
+      <div id="hubspotFormContainer">
+        <!-- Form injected here -->
+      </div>
+      <script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
+      <script>
+        hbspt.forms.create({
+          portalId: "244214510",
+          formId: "2f25a197-b3d2-4a48-9d0e-692013cfc3c5",
+          region: "na2",
+          target: "#hubspotFormContainer"
+        });
+      </script>
+    </div>
+  </div>
+
+  <script>
+    function openHubspotModal(e) {
+      e.preventDefault();
+      document.getElementById('hubspotModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeHubspotModal() {
+      document.getElementById('hubspotModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    window.addEventListener('click', function (e) {
+      var modal = document.getElementById('hubspotModal');
+      if (e.target === modal) {
+        closeHubspotModal();
+      }
+    });
+  </script>
+
+</body>
+
+</html>

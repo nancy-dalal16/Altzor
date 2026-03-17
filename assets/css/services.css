@@ -115,7 +115,15 @@
 #breadcrumb h4 a:hover{
   color: var(--primary);
 }
-
+.engage-numbered, .engage-card{
+  border: 2px solid transparent;
+}
+.engage-card:hover { 
+  border: 2px solid var(--primary);
+}
+.engage-numbered:hover { 
+  border: 2px solid var(--primary);
+}
 @media screen and (max-width: 767px) {
   .backdrop-img1{
     height: 100vh;

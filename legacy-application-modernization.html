@@ -1,0 +1,711 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Altzor - Legacy Application Modernization</title>
+
+  <!--Icons-->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="assets/img/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.png">
+
+  <link rel="mask-icon" href="assets/img/favicon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="assets/img/favicon.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+
+  <!-- Resource Hints for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com">
+
+  <!-- CSS References -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+
+  <link rel="stylesheet" href="assets/plugins/scroll_animation/scroll-animation.css" />
+  <link rel="stylesheet" href="assets/css/common.css" />
+  <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+  <link rel="stylesheet" href="assets/css/home.css" />
+  <link rel="stylesheet" href="assets/css/services.css" />
+  <link rel="stylesheet" href="assets/css/databricks.css" />
+  <link rel="stylesheet" href="assets/css/genai.css" />
+
+  <!-- JS References -->
+  <script src="assets/js/jquery.js" defer></script>
+  <script src="assets/js/header.js" defer></script>
+
+
+  <!-- Icons References -->
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" media="print"
+    onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  </noscript>
+
+  <style>
+    #services-banner {
+      background-image: url("assets/img/continuity-services/Legacy\ Application\ Modernization.webp");
+    }
+
+    #approach1 video,
+    #gain video {
+      width: 20%;
+    }
+
+    #approach2 video,
+    #approach3 video {
+      width: 25%;
+    }
+
+    #approach1 ul li {
+      color: #131314B2;
+      opacity: 0.7;
+      font-size: 1rem;
+      list-style: none;
+      padding: 5px 30px;
+      background-image: url("assets/img/data-engineering/check-mark.svg");
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 20px;
+      margin-left: 1rem;
+    }
+
+    #approach1 ul {
+      list-style-position: outside;
+
+    }
+
+    @media (max-width: 768px) {
+
+      #approach1 video,
+      #approach2 video,
+      #approach3 video,
+      #gain video {
+        width: 25% !important;
+      }
+    }
+
+    /* Approach Principles */
+    .principle-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.25rem 1.5rem;
+      background: var(--white);
+      border-radius: 16px;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .principle-item i {
+      font-size: 1.5rem;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .principle-item p {
+      margin: 0;
+      font-weight: var(--semibold);
+      color: var(--black);
+    }
+
+    /* How We Engage Cards */
+    .engage-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 2rem;
+      height: 100%;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .engage-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .engage-card .icon-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(255, 103, 1, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+    }
+
+    .engage-card .icon-circle i {
+      font-size: 1.75rem;
+      color: var(--primary);
+    }
+
+    .engage-card h5 {
+      font-weight: var(--semibold);
+      color: var(--black);
+      margin-bottom: 0.5rem;
+    }
+
+    .engage-card p {
+      color: #131314B2;
+      margin-bottom: 0;
+    }
+
+    /* Typical engagement numbered cards */
+    .engage-numbered {
+      background: #F8F8FA;
+      border-radius: 24px;
+      padding: 2rem;
+      height: 100%;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .engage-numbered:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .engage-numbered .num {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+
+    .engage-numbered p.title {
+      font-weight: var(--semibold);
+      color: var(--black);
+      margin-bottom: 0;
+      font-size: 1.1rem;
+    }
+
+    /* Matters accent */
+    .matters-accent {
+      border-left: 4px solid var(--primary);
+      padding-left: 1.5rem;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <div id="loader">
+    <div class="loader-gradient-ring"></div>
+  </div>
+
+
+
+  <!--Header Section Starts-->
+  <!-- Header Starts -->
+  <header class="header">
+    <div class="container">
+      <div class="headerHolder">
+        <a href="./">
+          <img src="assets/img/Altzor-Logo.svg" alt="logo" class="logo" />
+        </a>
+        <nav class="navbar">
+          <ul class="navbar-list mobile-list">
+            <!-- 1) Who We Are -->
+            <li class="nav-item has-mega">
+              <a class="nav-link mega-toggle" href="javascript:void(0)" aria-expanded="false">Who We Are <i class='bx bx-sm bx-chevron-down'></i></a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div class="mega-col">
+                    <h6 class="mega-col-title">About</h6>
+                    <ul>
+                      <li><a class="mega-link about" href="./about">About Altzor</a></li>
+                      <li><a class="mega-link lead" href="./leadership">Leadership Team</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-col">
+                    <h6 class="mega-col-title">Company</h6>
+                    <ul>
+                      <li><a class="mega-link whychoose" href="./why-choose-us">Why Choose Us</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 2) What We Do -->
+            <li class="nav-item has-mega">
+              <a class="nav-link mega-toggle" href="javascript:void(0)" aria-expanded="false">What We Do <i class='bx bx-sm bx-chevron-down'></i></a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div class="mega-col">
+                    <h6 class="mega-col-title">Services</h6>
+                    <ul>
+                      <li><a class="mega-link prodeng" href="./product-engineering">Product Engineering</a></li>
+                      <li><a class="mega-link dataeng" href="./data-engineering">Data Engineering</a></li>
+                      <li><a class="mega-link plateng" href="./platform-based-engineering">Platform-Based Engineering</a></li>
+                      <li><a class="mega-link techeng" href="./technology-offerings">Technology Offerings</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-col">
+                    <h6 class="mega-col-title">Engagement Models</h6>
+                    <ul>
+                      <li><a class="mega-link gccservice" href="./gcc-as-a-service">GCC as a Service for Global Enterprise</a></li>
+                      <li><a class="mega-link vcpe" href="./vc-pe-backed-portfolio-support">VC/PE-backed Portfolio Support</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 3) Generative AI -->
+            <li class="nav-item"><a href="./generative-ai-engineering-services" class="nav-link genai">Generative AI &amp; AI Engineering</a></li>
+            <!-- 4) Careers -->
+            <li class="nav-item"><a href="./career" class="nav-link career">Careers</a></li>
+            <!-- 5) Resources -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle no-popup" href="javascript:void(0)" role="button" aria-expanded="false">Resources <i class='bx bx-sm bx-chevron-down'></i></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://blog.altzor.com/">Blogs</a></li>
+              </ul>
+            </li>
+            <li><a href="./contact-us" class="primary-btn mobile-btn">Contact Us </a></li>
+          </ul>
+        </nav>
+        <a href="./contact-us" class="primary-btn desktop-btn">Contact Us </a>
+        <div class="mobile-navbar-btn">
+          <i class='bx bx-menu bx-lg mobile-nav-icon' name="menu-outline"></i>
+          <i class='bx bx-menu-alt-right bx-lg mobile-nav-icon' name="close-outline"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header Ends -->
+  <!--Header Section Ends-->
+
+
+  <!-- Banner Section Starts -->
+  <section id="services-banner" class="d-flex align-items-center position-relative">
+    <div class="banner-overlay d-flex align-items-center">
+      <div class="container">
+        <div class="row flex justify-content-center align-items-center gap-0" data-aos="fade-down" data-aos-delay="400">
+          <div class="col-md-9">
+            <div class="banner-text text-center">
+              <h1>
+                <span class="text-primary">Legacy Application</span> <br>Modernization
+              </h1>
+              <p>
+                Measured, incremental evolution — improving maintainability, performance, and architectural clarity
+                while preserving business continuity.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Banner Section Ends -->
+
+  <section id="breadcrumb">
+    <div class="container">
+      <h4 class="supporting-title text-center text-black">Services / Legacy Application Modernization</h4>
+    </div>
+  </section>
+
+  <!--Overview Section Starts-->
+  <section id="about" class="page-section">
+    <div class="container d-flex flex-column justify-content-center align-items-center">
+      <div class="row d-flex align-items-center justify-content-center g-4" data-aos="fade-down" data-aos-delay="400">
+
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+          <h2 class="section-title">Overview</h2>
+
+          <p class="w-90 text-black mt-3">Many enterprises operate legacy applications that are stable, functionally
+            rich, and deeply embedded in day-to-day business operations. These systems often encode years of business
+            logic, regulatory interpretation, and operational nuance. Replacing them outright can introduce significant
+            risk, cost, and disruption.</p>
+          <p class="w-90 text-black mt-2">Altzor's legacy application modernization services focus on measured,
+            incremental evolution — improving maintainability, performance, and architectural clarity while preserving
+            business continuity. Modernization is treated as an engineering discipline, not a one-time transformation
+            event.</p>
+        </div>
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+          <div class="bodyImg-holder position-relative">
+            <img src="assets/img/continuity-services/legacy_app_overview.webp" class="About Us Section Image"
+              width="100%" alt="Legacy Application Modernization" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Overview Section Ends-->
+
+  <!--What We Do Section Starts-->
+  <section id="about" class="page-section">
+    <div class="container d-flex flex-column justify-content-center align-items-center pb-20">
+      <div class="row d-flex align-items-center justify-content-center g-5" data-aos="fade-down" data-aos-delay="400">
+
+        <div class="col-md-6 d-flex flex-column justify-content-center order-md-2">
+          <h2 class="section-title">What We Do</h2>
+
+          <p class="w-90 text-black mt-3">We modernize legacy applications in a controlled, step-by-step manner,
+            ensuring that business behavior remains consistent while the underlying technology foundation is
+            strengthened.</p>
+          <p class="w-90 text-black mt-2">Our approach avoids "big-bang rewrites" and instead prioritizes:</p>
+
+          <div class="mt-3">
+            <div class="principle-item">
+              <i class='bx bx-shield-quarter'></i>
+              <p>Risk containment</p>
+            </div>
+            <div class="principle-item">
+              <i class='bx bx-trending-up'></i>
+              <p>Incremental value delivery</p>
+            </div>
+            <div class="principle-item">
+              <i class='bx bx-revision'></i>
+              <p>Clear rollback paths</p>
+            </div>
+            <div class="principle-item">
+              <i class='bx bx-check-shield'></i>
+              <p>Long-term supportability</p>
+            </div>
+          </div>
+
+          <p class="w-90 text-black mt-3">Modernization efforts are aligned with operational realities, release cycles,
+            and regulatory constraints.</p>
+        </div>
+        <div class="col-md-6 d-flex flex-column justify-content-center order-md-1">
+          <div class="bodyImg-holder position-relative">
+            <img src="assets/img/continuity-services/legacy_whatwedo.webp" class="About Us Section Image" width="100%"
+              alt="What We Do" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--What We Do Section Ends-->
+
+  <!-- Key Modernization Dimensions Section Starts -->
+  <section id="approach1" class="page-section">
+    <div class="container">
+      <h2 class="section-title text-center" data-aos="fade-down" data-aos-delay="400">Key Modernization Dimensions
+      </h2>
+      <h4 class="supporting-title text-center" data-aos="fade-down" data-aos-delay="400">We typically address
+        modernization across multiple dimensions, depending on system maturity and business priorities:
+      </h4>
+
+      <div class="row pt-5 g-4" data-aos="fade-down" data-aos-delay="400">
+
+        <div class="col-md-4">
+          <div class="gray-card">
+            <video src="./assets/img/data-engineering/4.mp4" loop muted autoplay preload="metadata" class="video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Architecture & Structure</p>
+
+            <ul class="mt-3">
+              <li>Refactoring monolithic applications into modular or layered architectures for long-term
+                maintainability.</li>
+              <li>Separation of concerns between UI, business logic, and data layers</li>
+              <li>Improved extensibility for future integration or enhancement</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="gray-card">
+            <video src="./assets/img/Altzor Homepage Icons mp4/Web Structure.mp4" loop muted autoplay preload="metadata"
+              class="video" playsinline></video>
+            <p class="mt-3 bold text-black">Technology Stack</p>
+            <ul class="mt-3">
+              <li>Upgrading outdated frameworks, runtimes, and libraries to supported platform versions.</li>
+              <li>Removal of deprecated or unsupported components</li>
+              <li>Alignment with currently supported platform versions</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="gray-card">
+            <video src="./assets/img/Altzor Homepage Icons mp4/01 Responsive.mp4" loop muted autoplay preload="metadata"
+              class="video" playsinline></video>
+            <p class="mt-3 bold text-black">User Experience</p>
+            <ul class="mt-3">
+              <li>UI modernization to improve usability, accessibility, and browser compatibility.</li>
+              <li>Incremental front-end refresh without altering backend logic</li>
+              <li>Responsive design and modern interaction patterns</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="gray-card">
+            <video src="./assets/img/services/Data Pipline.mp4" loop muted autoplay preload="metadata" class="video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Integration Readiness</p>
+            <ul class="mt-3">
+              <li>API enablement for easier integration with other enterprise systems.</li>
+              <li>Improved data exchange and interface stability</li>
+              <li>RESTful API design and contract-first development</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="gray-card">
+            <video src="./assets/img/data-engineering/3.mp4" loop muted autoplay preload="metadata" class="video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Code Quality & Maintainability</p>
+            <ul class="mt-3">
+              <li>Technical debt assessment and remediation for sustainable codebases.</li>
+              <li>Improved code readability, documentation, and test coverage</li>
+              <li>Static analysis and automated quality gates</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Key Modernization Dimensions Section Ends -->
+
+  <!-- How We Engage Section Starts -->
+  <section id="approach2" class="page-section">
+    <div class="container">
+      <h2 class="section-title text-center" data-aos="fade-down" data-aos-delay="400">How We Engage</h2>
+      <h4 class="supporting-title text-center" data-aos="fade-down" data-aos-delay="400">Legacy modernization
+        engagements typically begin with a structured assessment phase,<br> followed by a phased execution roadmap.
+      </h4>
+
+      <div class="row pt-5 g-4 justify-content-center" data-aos="fade-down" data-aos-delay="400">
+        <div class="col-md-3">
+          <div class="engage-numbered">
+            <div class="num">01</div>
+            <p class="title">Close collaboration with application owners and enterprise architects</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="engage-numbered">
+            <div class="num">02</div>
+            <p class="title">Clear prioritization based on business impact and risk</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="engage-numbered">
+            <div class="num">03</div>
+            <p class="title">Phased delivery aligned with existing release calendars</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="engage-numbered">
+            <div class="num">04</div>
+            <p class="title">Continuous validation with business stakeholders
+            </p>
+          </div>
+        </div>
+      </div>
+      <h4 class="supporting-title text-center mt-5" data-aos="fade-down" data-aos-delay="400">We work within existing
+        governance, compliance, and audit frameworks to ensure modernization efforts are defensible and traceable.
+      </h4>
+    </div>
+  </section>
+  <!-- How We Engage Section Ends -->
+
+  <!-- Typical Engagements Section Starts -->
+  <section id="approach2" class="page-section">
+    <div class="container">
+      <h2 class="section-title text-center" data-aos="fade-down" data-aos-delay="400">Typical Engagements</h2>
+      <h4 class="supporting-title text-center" data-aos="fade-down" data-aos-delay="400">Common modernization scenarios
+        where we deliver measurable value.</h4>
+      <div class="row pt-5 g-4" data-aos="fade-down" data-aos-delay="400">
+        <div class="col-md-3">
+          <div class="gray-card">
+            <video src="./assets/img/services/Ai Ready Data.mp4" loop muted autoplay preload="metadata" class="video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Phased Legacy Modernization</p>
+            <p class="mt-2">Multi-quarter modernization programs for complex legacy estates.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="gray-card">
+            <video src="./assets/img/Altzor Homepage Icons mp4/12 Diagram.mp4" loop muted autoplay preload="metadata"
+              class="video" playsinline></video>
+            <p class="mt-3 bold text-black">Platform Refresh</p>
+            <p class="mt-2">Refresh initiatives for aging but business-critical systems.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="gray-card">
+            <video src="./assets/img/services/SQL Alalytics.mp4" loop muted autoplay preload="metadata" class="video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Incremental Refactoring</p>
+            <p class="mt-2">Refactoring and stabilization of high-risk applications.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="gray-card">
+            <video src="./assets/img/services/Apache Spark.mp4" loop muted autoplay preload="metadata" class="video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Cloud-Ready Preparation</p>
+            <p class="mt-2">Preparing legacy systems for future cloud or platform transitions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Typical Engagements Section Ends -->
+
+  <!-- When This Makes Sense Section Starts -->
+  <section id="approach3" class="page-section">
+    <div class="container">
+      <h2 class="section-title text-center" data-aos="fade-down" data-aos-delay="400">When This Makes Sense</h2>
+      <h4 class="supporting-title text-center" data-aos="fade-down" data-aos-delay="400">Legacy application
+        modernization is well-suited when:</h4>
+
+      <div class="row pt-5 g-4 justify-content-center" data-aos="fade-down" data-aos-delay="400">
+        <div class="col-md-3">
+          <div class="gray-card">
+            <video src="./assets/img/services/Data Warehouse.mp4" loop muted autoplay preload="metadata" class="video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Stable but Hard to Maintain</p>
+            <p class="mt-2">Applications are stable but difficult to maintain, extend, or onboard new developers.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="gray-card">
+            <video src="./assets/img/data-engineering/1.mp4" loop muted autoplay preload="metadata" class="video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Valuable Business Logic</p>
+            <p class="mt-2">Business logic is valuable, well-understood, and too costly to rewrite from scratch.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="gray-card">
+            <video src="./assets/img/services/Trust Goverance.mp4" loop muted autoplay preload="metadata" class="video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Low Risk Tolerance</p>
+            <p class="mt-2">Risk tolerance for disruption is low, and operational continuity is non-negotiable.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="gray-card">
+            <video src="./assets/img/Altzor Homepage Icons mp4/27 Cyber security_1.mp4" loop muted autoplay
+              preload="metadata" class="video" playsinline></video>
+            <p class="mt-3 bold text-black">Regulatory Requirements</p>
+            <p class="mt-2">Regulatory or audit requirements demand traceability and controlled evolution.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- When This Makes Sense Section Ends -->
+
+  <!-- Why This Still Matters Section Starts -->
+  <section id="about" class="page-section" style="background: var(--grey);">
+    <div class="container d-flex flex-column justify-content-center align-items-center">
+      <div class="row d-flex align-items-center justify-content-center g-4" data-aos="fade-down" data-aos-delay="400">
+        <div class="col-md-12 d-flex flex-column justify-content-center">
+          <div class="matters-accent">
+            <h2 class="section-title">Why This Still Matters</h2>
+            <p class="w-90 text-black mt-3" style="font-size: 1.125rem;">Legacy applications often encode decades of
+              business rules, regulatory interpretation, and operational nuance that are not documented anywhere else.
+              These systems are not simply "old technology" — they are repositories of institutional knowledge that
+              continue to deliver business value.</p>
+            <p class="w-90 text-black mt-2" style="font-size: 1.125rem;">Modernizing such systems incrementally allows
+              organizations to reduce operational risk, improve maintainability, and extend system lifespan without
+              disrupting core processes. In many cases, careful modernization delivers greater long-term ROI than
+              wholesale replacement.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Why This Still Matters Section Ends -->
+
+  <!-- AI Enablement FAQs Section Starts -->
+  <section id="genai-faqs" class="page-section">
+    <div class="container">
+      <h2 class="section-title text-center" data-aos="fade-down" data-aos-delay="400">AI Enablement & Future Use Cases
+      </h2>
+      <h4 class="supporting-title text-center" data-aos="fade-down" data-aos-delay="400">How AI can support and
+        accelerate legacy modernization efforts</h4>
+
+      <div class="mt-5" data-aos="fade-down" data-aos-delay="400">
+        <div class="accordion" id="accordionAI">
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingAiOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAiOne"
+                aria-expanded="true" aria-controls="collapseAiOne">
+                Can AI accelerate legacy modernization efforts?
+              </button>
+            </h2>
+            <div id="collapseAiOne" class="accordion-collapse collapse show" aria-labelledby="headingAiOne"
+              data-bs-parent="#accordionAI">
+              <div class="accordion-body">
+                <p class="text-black">Yes. AI can significantly accelerate discovery phases by analyzing codebases,
+                  identifying dependencies, and highlighting candidates for modernization.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingAiTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseAiTwo" aria-expanded="false" aria-controls="collapseAiTwo">
+                Can AI help future-proof legacy systems?
+              </button>
+            </h2>
+            <div id="collapseAiTwo" class="accordion-collapse collapse" aria-labelledby="headingAiTwo"
+              data-bs-parent="#accordionAI">
+              <div class="accordion-body">
+                <p class="text-black">Yes. AI-assisted analysis can help design cleaner APIs, better modularization, and
+                  documentation that makes future modernization easier.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingAiThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseAiThree" aria-expanded="false" aria-controls="collapseAiThree">
+                Does AI reduce modernization risk?
+              </button>
+            </h2>
+            <div id="collapseAiThree" class="accordion-collapse collapse" aria-labelledby="headingAiThree"
+              data-bs-parent="#accordionAI">
+              <div class="accordion-body">
+                <p class="text-black">When used correctly, AI reduces uncertainty during assessment and planning phases,
+                  leading to better-informed modernization decisions.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- AI Enablement FAQs Section Ends -->
+
+
+
+  <!--Footer Section Starts-->
+  <div include="footer.html"></div>
+  <!--Footer Section Ends-->
+
+  <!-- JS References -->
+  <script src="assets/js/bootstrap.min.js "></script>
+  <script src="assets/plugins/scroll_animation/scroll-animation.js"></script>
+  <script src="assets/js/common.js"></script>
+  <!-- <script src="assets/js/header.js"></script> -->
+  <script src="assets/js/home.js"></script>
+</body>
+
+</html>

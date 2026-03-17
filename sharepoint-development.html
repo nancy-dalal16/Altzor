@@ -1,0 +1,475 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Altzor - SharePoint Development & Implementation</title>
+
+  <!--Icons-->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="assets/img/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.png">
+
+  <link rel="mask-icon" href="assets/img/favicon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="assets/img/favicon.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+
+  <!-- Resource Hints for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com">
+
+  <!-- CSS References -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+
+  <link rel="stylesheet" href="assets/plugins/scroll_animation/scroll-animation.css" />
+  <link rel="stylesheet" href="assets/css/common.css" />
+  <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+  <link rel="stylesheet" href="assets/css/home.css" />
+  <link rel="stylesheet" href="assets/css/services.css" />
+  <link rel="stylesheet" href="assets/css/databricks.css" />
+  <link rel="stylesheet" href="assets/css/genai.css" />
+
+  <!-- JS References -->
+  <script src="assets/js/jquery.js" defer></script>
+  <script src="assets/js/header.js" defer></script>
+
+
+  <!-- Icons References -->
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" media="print"
+    onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  </noscript>
+
+  <style>
+    #services-banner {
+      background-image: url("assets/img/continuity-services/SharePoint\ Development\ &\ Implementation.webp");
+    }
+
+    #approach1 video {
+      width: 12%;
+    }
+
+    #approach2 video {
+      width: 25%;
+    }
+
+    @media (max-width: 768px) {
+
+      #approach1 video,
+      #approach2 video {
+        width: 25%;
+      }
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <div id="loader">
+    <div class="loader-gradient-ring"></div>
+  </div>
+
+
+
+  <!--Header Section Starts-->
+  <!-- Header Starts -->
+  <header class="header">
+    <div class="container">
+      <div class="headerHolder">
+        <a href="./">
+          <img src="assets/img/Altzor-Logo.svg" alt="logo" class="logo" />
+        </a>
+        <nav class="navbar">
+          <ul class="navbar-list mobile-list">
+            <!-- 1) Who We Are -->
+            <li class="nav-item has-mega">
+              <a class="nav-link mega-toggle" href="javascript:void(0)" aria-expanded="false">Who We Are <i class='bx bx-sm bx-chevron-down'></i></a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div class="mega-col">
+                    <h6 class="mega-col-title">About</h6>
+                    <ul>
+                      <li><a class="mega-link about" href="./about">About Altzor</a></li>
+                      <li><a class="mega-link lead" href="./leadership">Leadership Team</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-col">
+                    <h6 class="mega-col-title">Company</h6>
+                    <ul>
+                      <li><a class="mega-link whychoose" href="./why-choose-us">Why Choose Us</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 2) What We Do -->
+            <li class="nav-item has-mega">
+              <a class="nav-link mega-toggle" href="javascript:void(0)" aria-expanded="false">What We Do <i class='bx bx-sm bx-chevron-down'></i></a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div class="mega-col">
+                    <h6 class="mega-col-title">Services</h6>
+                    <ul>
+                      <li><a class="mega-link prodeng" href="./product-engineering">Product Engineering</a></li>
+                      <li><a class="mega-link dataeng" href="./data-engineering">Data Engineering</a></li>
+                      <li><a class="mega-link plateng" href="./platform-based-engineering">Platform-Based Engineering</a></li>
+                      <li><a class="mega-link techeng" href="./technology-offerings">Technology Offerings</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-col">
+                    <h6 class="mega-col-title">Engagement Models</h6>
+                    <ul>
+                      <li><a class="mega-link gccservice" href="./gcc-as-a-service">GCC as a Service for Global Enterprise</a></li>
+                      <li><a class="mega-link vcpe" href="./vc-pe-backed-portfolio-support">VC/PE-backed Portfolio Support</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 3) Generative AI -->
+            <li class="nav-item"><a href="./generative-ai-engineering-services" class="nav-link genai">Generative AI &amp; AI Engineering</a></li>
+            <!-- 4) Careers -->
+            <li class="nav-item"><a href="./career" class="nav-link career">Careers</a></li>
+            <!-- 5) Resources -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle no-popup" href="javascript:void(0)" role="button" aria-expanded="false">Resources <i class='bx bx-sm bx-chevron-down'></i></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://blog.altzor.com/">Blogs</a></li>
+              </ul>
+            </li>
+            <li><a href="./contact-us" class="primary-btn mobile-btn">Contact Us </a></li>
+          </ul>
+        </nav>
+        <a href="./contact-us" class="primary-btn desktop-btn">Contact Us </a>
+        <div class="mobile-navbar-btn">
+          <i class='bx bx-menu bx-lg mobile-nav-icon' name="menu-outline"></i>
+          <i class='bx bx-menu-alt-right bx-lg mobile-nav-icon' name="close-outline"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header Ends -->
+  <!--Header Section Ends-->
+
+
+  <!-- Banner Section Starts -->
+  <section id="services-banner" class="d-flex align-items-center position-relative">
+    <div class="banner-overlay d-flex align-items-center">
+      <div class="container">
+        <div class="row flex justify-content-center align-items-center gap-0" data-aos="fade-down" data-aos-delay="400">
+          <div class="col-md-9">
+            <div class="banner-text text-center">
+              <h1>
+                <span class="text-primary">SharePoint</span> Development <br>& Implementation
+              </h1>
+              <p>
+                Building, extending, and sustaining SharePoint environments that are secure, governed, and scalable for
+                your enterprise.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Banner Section Ends -->
+
+  <section id="breadcrumb">
+    <div class="container">
+      <h4 class="supporting-title text-center text-black">Services / SharePoint Development & Implementation</h4>
+    </div>
+  </section>
+
+  <!--About Section Starts-->
+  <section id="about" class="page-section">
+    <div class="container d-flex flex-column justify-content-center align-items-center">
+      <div class="row d-flex align-items-center justify-content-center g-4" data-aos="fade-down" data-aos-delay="400">
+
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+          <h2 class="section-title">Overview</h2>
+
+          <p class="w-90 text-black mt-3">SharePoint remains a foundational collaboration, document management, and
+            intranet platform across many enterprises. Despite the evolution of newer collaboration tools, SharePoint
+            continues to support critical workflows, compliance requirements, and knowledge management.</p>
+          <p class="w-90 text-black mt-2">Altzor supports organizations in building, extending, and sustaining
+            SharePoint environments that are secure, governed, and scalable.</p>
+        </div>
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+          <div class="bodyImg-holder position-relative">
+            <img src="assets/img/continuity-services/sharepoint_overview.webp" class="About Us Section Image"
+              width="100%" alt="SharePoint Development" loading="lazy" />
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--About Section Ends-->
+
+  <!--What We Do Section Starts-->
+  <section id="about" class="pb-28">
+    <div class="container d-flex flex-column justify-content-center align-items-center">
+      <div class="row d-flex align-items-center justify-content-center g-5" data-aos="fade-down" data-aos-delay="400">
+
+        <div class="col-md-6 d-flex flex-column justify-content-center order-md-2">
+          <h2 class="section-title">What We Do</h2>
+
+          <p class="w-90 text-black mt-3">We design and maintain SharePoint solutions that balance customization with
+            long-term maintainability, ensuring platforms remain usable and supportable over time.</p>
+        </div>
+        <div class="col-md-6 d-flex flex-column justify-content-center order-md-1">
+          <div class="bodyImg-holder position-relative">
+            <img src="assets/img/continuity-services/sharepoint_whatwedo.webp" class="About Us Section Image"
+              width="100%" alt="What We Do" loading="lazy" />
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--What We Do Section Ends-->
+
+  <!-- Key Capabilities Section Starts -->
+  <section id="approach1" class="page-section">
+    <div class="container">
+      <h2 class="section-title text-center" data-aos="fade-down" data-aos-delay="400">Key Capabilities</h2>
+      <h4 class="supporting-title text-center" data-aos="fade-down" data-aos-delay="400">Comprehensive SharePoint
+        solutions tailored for your enterprise needs.
+      </h4>
+      <div class="row pt-5 g-4" data-aos="fade-down" data-aos-delay="400">
+        <div class="col-md-6">
+          <div class="gray-card">
+            <video src="./assets/img/Altzor Homepage Icons mp4/02 Data Cloud.mp4" loop muted autoplay preload="metadata"
+              class="video" playsinline></video>
+            <p class="mt-3 bold text-black">SharePoint Online, On-Premise & Hybrid</p>
+            <p class="mt-2">Flexible implementations across SharePoint Online, on-premise, and hybrid environments to
+              meet your infrastructure requirements.</p>
+
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="gray-card">
+            <video src="./assets/img/Altzor Homepage Icons mp4/Web Structure.mp4" loop muted autoplay preload="metadata"
+              class="video" playsinline></video>
+            <p class="mt-3 bold text-black">Custom Web Parts, Workflows & Automation</p>
+            <p class="mt-2">Tailored development of web parts, workflows, and automated processes to streamline your
+              business operations.</p>
+
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="gray-card">
+            <video src="./assets/img/Altzor Homepage Icons mp4/Data & AI Acceleration.mp4" loop muted autoplay
+              preload="metadata" class="video" playsinline></video>
+            <p class="mt-3 bold text-black">Intranet Portals & Document Management</p>
+            <p class="mt-2">Enterprise intranet portals, document libraries, metadata management, and granular
+              permissions configuration.</p>
+
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="gray-card">
+            <video src="./assets/img/Altzor Homepage Icons mp4/17 Business development.mp4" loop muted autoplay
+              preload="metadata" class="video" playsinline></video>
+            <p class="mt-3 bold text-black">Migrations & Upgrades</p>
+            <p class="mt-2">SharePoint migrations, tenant consolidation, and version upgrades with minimal disruption to
+              business operations.</p>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Key Capabilities Section Ends -->
+
+  <!-- Typical Engagements Section Starts -->
+  <section id="approach2" class="page-section">
+    <div class="container">
+      <h2 class="section-title text-center" data-aos="fade-down" data-aos-delay="400">Typical Engagements</h2>
+      <h4 class="supporting-title text-center" data-aos="fade-down" data-aos-delay="400">Common scenarios where we
+        deliver measurable value.
+      </h4>
+      <div class="row pt-5 g-4" data-aos="fade-down" data-aos-delay="400">
+        <div class="col-md-3">
+          <div class="gray-card">
+            <video src="./assets/img/Altzor Homepage Icons mp4/Strategize & Setup.mp4" loop muted autoplay
+              preload="metadata" class="video" playsinline></video>
+            <p class="mt-3 bold text-black">Enterprise Intranet Builds & Refreshes</p>
+            <p class="mt-2">Modern, user-friendly intranets designed for collaboration and productivity.</p>
+
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="gray-card">
+            <video src="./assets/img/Altzor Homepage Icons mp4/Change.mp4" loop muted autoplay preload="metadata"
+              class="video" playsinline></video>
+            <p class="mt-3 bold text-black">Version Upgrades & Migrations</p>
+            <p class="mt-2">Seamless transitions between SharePoint versions with data integrity assurance.</p>
+
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="gray-card">
+            <video src="./assets/img/services/Data Science.mp4" loop muted autoplay preload="metadata" class="video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Workflow Automation</p>
+            <p class="mt-2">Automated business processes that reduce manual effort and improve efficiency.</p>
+
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="gray-card">
+            <video src="./assets/img/Altzor Homepage Icons mp4/11 Idea.mp4" loop muted autoplay preload="metadata"
+              class="video" playsinline></video>
+            <p class="mt-3 bold text-black">Ongoing Platform Support</p>
+            <p class="mt-2">Continuous maintenance, optimization, and support for sustained platform performance.</p>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Typical Engagements Section Ends -->
+
+  <!-- Version & Migration FAQs Section Starts -->
+  <section id="genai-faqs" class="page-section">
+    <div class="container">
+      <h2 class="section-title text-center" data-aos="fade-down" data-aos-delay="400">Version & Migration FAQs</h2>
+      <h4 class="supporting-title text-center" data-aos="fade-down" data-aos-delay="400">Common questions about
+        SharePoint version upgrades and migrations</h4>
+
+      <div class="mt-5" data-aos="fade-down" data-aos-delay="400">
+        <div class="accordion" id="accordionMigration">
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMigOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMigOne"
+                aria-expanded="true" aria-controls="collapseMigOne">
+                Do you support migration from SharePoint 2013 / 2016 / 2019 to SharePoint Online?
+              </button>
+            </h2>
+            <div id="collapseMigOne" class="accordion-collapse collapse show" aria-labelledby="headingMigOne"
+              data-bs-parent="#accordionMigration">
+              <div class="accordion-body">
+                <p class="text-black">Yes. Including content, permissions, and workflow transitions.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMigTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseMigTwo" aria-expanded="false" aria-controls="collapseMigTwo">
+                Do you modernize classic SharePoint sites?
+              </button>
+            </h2>
+            <div id="collapseMigTwo" class="accordion-collapse collapse" aria-labelledby="headingMigTwo"
+              data-bs-parent="#accordionMigration">
+              <div class="accordion-body">
+                <p class="text-black">Yes. Classic sites are converted to modern experiences.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Version & Migration FAQs Section Ends -->
+
+  <!-- AI-Assisted & Automation FAQs Section Starts -->
+  <section id="genai-faqs" class="pb-20">
+    <div class="container">
+      <h2 class="section-title text-center" data-aos="fade-down" data-aos-delay="400">AI-Assisted & Automation FAQs</h2>
+      <h4 class="supporting-title text-center" data-aos="fade-down" data-aos-delay="400">Questions about AI enablement
+        and future use cases in SharePoint</h4>
+
+      <div class="mt-5" data-aos="fade-down" data-aos-delay="400">
+        <div class="accordion" id="accordionAI">
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingAiOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAiOne"
+                aria-expanded="true" aria-controls="collapseAiOne">
+                Can AI assist in SharePoint migration or analysis?
+              </button>
+            </h2>
+            <div id="collapseAiOne" class="accordion-collapse collapse show" aria-labelledby="headingAiOne"
+              data-bs-parent="#accordionAI">
+              <div class="accordion-body">
+                <p class="text-black">Yes. AI can assist with content classification and discovery, validated by
+                  engineers.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingAiTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseAiTwo" aria-expanded="false" aria-controls="collapseAiTwo">
+                AI Enablement & Future Use Cases — How can AI be used effectively in SharePoint today?
+              </button>
+            </h2>
+            <div id="collapseAiTwo" class="accordion-collapse collapse" aria-labelledby="headingAiTwo"
+              data-bs-parent="#accordionAI">
+              <div class="accordion-body">
+                <p class="text-black">AI enhances search, summarization, and content discovery, especially through
+                  Microsoft Copilot.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingAiThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseAiThree" aria-expanded="false" aria-controls="collapseAiThree">
+                Do you help prepare SharePoint for Copilot?
+              </button>
+            </h2>
+            <div id="collapseAiThree" class="accordion-collapse collapse" aria-labelledby="headingAiThree"
+              data-bs-parent="#accordionAI">
+              <div class="accordion-body">
+                <p class="text-black">Yes. Proper information architecture and permissions are critical for effective
+                  Copilot usage.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- AI-Assisted & Automation FAQs Section Ends -->
+
+
+
+  <!--Footer Section Starts-->
+  <div include="footer.html"></div>
+  <!--Footer Section Ends-->
+
+  <!-- JS References -->
+  <script src="assets/js/bootstrap.min.js "></script>
+  <script src="assets/plugins/scroll_animation/scroll-animation.js"></script>
+  <script src="assets/js/common.js"></script>
+  <!-- <script src="assets/js/header.js"></script> -->
+  <script src="assets/js/home.js"></script>
+</body>
+
+</html>

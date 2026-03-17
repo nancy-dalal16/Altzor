@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="assets/css/common.css" />
   <link rel="stylesheet" href="assets/css/header.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
-  <link rel="stylesheet" href="assets/css/home.css" />
+  <link rel="stylesheet" href="assets/css/home.css?v=1.1" />
   <!-- JS References -->
   <script src="assets/js/jquery.js" defer></script>
   <script src="assets/js/header.js" defer></script>
@@ -61,63 +61,81 @@
   <!-- Header Starts -->
   <header class="header">
     <div class="container">
-
       <div class="headerHolder">
         <a href="./">
           <img src="assets/img/Altzor-Logo.svg" alt="logo" class="logo" />
         </a>
         <nav class="navbar">
-
-          <ul class="navbar-list  mobile-list">
-            <li class="nav-item"><a href="./" class="nav-link active home">Home</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                aria-expanded="false">About <i class='bx bx-sm bx-chevron-down'></i></a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item about" href="./about">About Altzor</a></li>
-                <li><a class="dropdown-item lead " href="./leadership">Leadership Team</a></li>
-
-              </ul>
+          <ul class="navbar-list mobile-list">
+            <!-- 1) Who We Are -->
+            <li class="nav-item has-mega">
+              <a class="nav-link mega-toggle" href="javascript:void(0)" aria-expanded="false">Who We Are <i
+                  class='bx bx-sm bx-chevron-down'></i></a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div class="mega-col">
+                    <h6 class="mega-col-title">About</h6>
+                    <ul>
+                      <li><a class="mega-link about" href="./about">About Altzor</a></li>
+                      <li><a class="mega-link lead" href="./leadership">Leadership Team</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-col">
+                    <h6 class="mega-col-title">Company</h6>
+                    <ul>
+                      <li><a class="mega-link whychoose" href="./why-choose-us">Why Choose Us</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </li>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle no-popup" data-bs-toggle="dropdown" href="javascript:void(0)"
-                role="button" aria-expanded="false">Services <i class='bx bx-sm bx-chevron-down'></i></a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item prodeng " href="./product-engineering">Product Engineering</a></li>
-                <li><a class="dropdown-item dataeng" href="./data-engineering">Data Engineering</a></li>
-                <li><a class="dropdown-item plateng" href="./platform-based-engineering">Platform-Based
-                    Engineering</a></li>
-                <li><a class="dropdown-item techeng" href="./technology-offerings">Technology
-                    Offerings</a></li>
-                <li><a class="dropdown-item genai" href="./generative-ai-engineering-services">Generative AI & AI
-                    Engineering</a></li>
-              </ul>
+            <!-- 2) What We Do -->
+            <li class="nav-item has-mega">
+              <a class="nav-link mega-toggle" href="javascript:void(0)" aria-expanded="false">What We Do <i
+                  class='bx bx-sm bx-chevron-down'></i></a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div class="mega-col">
+                    <h6 class="mega-col-title">Services</h6>
+                    <ul>
+                      <li><a class="mega-link prodeng" href="./product-engineering">Product Engineering</a></li>
+                      <li><a class="mega-link dataeng" href="./data-engineering">Data Engineering</a></li>
+                      <li><a class="mega-link plateng" href="./platform-based-engineering">Platform-Based
+                          Engineering</a></li>
+                      <li><a class="mega-link techeng" href="./technology-offerings">Technology Offerings</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-col">
+                    <h6 class="mega-col-title">Engagement Models</h6>
+                    <ul>
+                      <li><a class="mega-link gccservice" href="./gcc-as-a-service">GCC as a Service for Global
+                          Enterprise</a></li>
+                      <li><a class="mega-link vcpe" href="./vc-pe-backed-portfolio-support">VC/PE-backed Portfolio
+                          Support</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </li>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle no-popup" data-bs-toggle="dropdown" href="javascript:void(0)"
-                role="button" aria-expanded="false">Engagement Models <i class='bx bx-sm bx-chevron-down'></i></a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item gccservice" href="./gcc-as-a-service">GCC-as-a-Service for Global
-                    Enterprise</a></li>
-                <li><a class="dropdown-item vcpe" href="./vc-pe-backed-portfolio-support">VC/PE-backed
-                    Portfolio Support</a></li>
-              </ul>
-            </li>
+            <!-- 3) Generative AI -->
+            <li class="nav-item"><a href="./generative-ai-engineering-services" class="nav-link genai">Generative AI
+                &amp; AI Engineering</a></li>
+
+            <!-- 4) Careers -->
             <li class="nav-item"><a href="./career" class="nav-link career">Careers</a></li>
-            <li class="nav-item"><a href="./why-choose-us" class="nav-link whychoose">Why Choose Us</a></li>
 
+            <!-- 5) Resources -->
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle no-popup" data-bs-toggle="dropdown" href="javascript:void(0)"
-                role="button" aria-expanded="false">Resources <i class='bx bx-sm bx-chevron-down'></i></a>
+              <a class="nav-link dropdown-toggle no-popup" href="javascript:void(0)" role="button"
+                aria-expanded="false">Resources <i class='bx bx-sm bx-chevron-down'></i></a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item gccservice" href="https://blog.altzor.com/">Blogs</a></li>
+                <li><a class="dropdown-item" href="https://blog.altzor.com/">Blogs</a></li>
               </ul>
             </li>
+
             <li><a href="./contact-us" class="primary-btn mobile-btn">Contact Us </a></li>
-
-
           </ul>
         </nav>
         <a href="./contact-us" class="primary-btn desktop-btn">Contact Us </a>
@@ -127,7 +145,6 @@
         </div>
       </div>
     </div>
-
   </header>
   <!-- Header Ends -->
   <!--Header Section Ends-->
@@ -200,7 +217,8 @@
         <div class="col-md-6">
           <div class="gray-card">
             <!-- <img src="./assets/img/home/helmet 1.svg" alt="icon"> -->
-            <video src="./assets/img/Altzor Homepage Icons mp4/01 engineer cogwheel helmet.mp4" loop muted autoplay preload="metadata" class="video" playsinline></video>
+            <video src="./assets/img/Altzor Homepage Icons mp4/01 engineer cogwheel helmet.mp4" loop muted autoplay
+              preload="metadata" class="video" playsinline></video>
             <p class="mt-3 bold text-black">Product Engineering</p>
             <p class="mt-2">From zero-to-one builds to large-scale evolutions — products, not just code.</p>
             <a href="./product-engineering" class="primary-btn-inverse">Learn More </a>
@@ -209,7 +227,8 @@
         <div class="col-md-6">
           <div class="gray-card">
             <!-- <img src="./assets/img/home/data-cloud 1.svg" alt="icon"> -->
-            <video src="./assets/img/Altzor Homepage Icons mp4/02 Data Cloud.mp4" loop muted autoplay preload="metadata" class="video" playsinline></video>
+            <video src="./assets/img/Altzor Homepage Icons mp4/02 Data Cloud.mp4" loop muted autoplay preload="metadata"
+              class="video" playsinline></video>
             <p class="mt-3 bold text-black">Data Engineering</p>
             <p class="mt-2">Pipelines, platforms, and AI-ready infra — secure, scalable, smart by design.</p>
             <a href="./data-engineering" class="primary-btn-inverse">Learn More </a>
@@ -218,7 +237,8 @@
         <div class="col-md-6">
           <div class="gray-card">
             <!-- <img src="./assets/img/home/responsive 1.svg" alt="icon"> -->
-            <video src="./assets/img/Altzor Homepage Icons mp4/01 Responsive.mp4" loop muted autoplay preload="metadata" class="video" playsinline></video>
+            <video src="./assets/img/Altzor Homepage Icons mp4/01 Responsive.mp4" loop muted autoplay preload="metadata"
+              class="video" playsinline></video>
             <p class="mt-3 bold text-black">Platform-Based Engineering</p>
             <p class="mt-2">We extend, rewire, and scale platforms with architecture-grade precision.</p>
             <a href="./platform-based-engineering" class="primary-btn-inverse">Learn More </a>
@@ -227,7 +247,8 @@
         <div class="col-md-6">
           <div class="gray-card">
             <!-- <img src="./assets/img/home/robot 1.svg" alt="icon"> -->
-            <video src="./assets/img/Altzor Homepage Icons mp4/11 Energy Robot.mp4" loop muted autoplay preload="metadata" class="video" playsinline></video>
+            <video src="./assets/img/Altzor Homepage Icons mp4/11 Energy Robot.mp4" loop muted autoplay
+              preload="metadata" class="video" playsinline></video>
             <p class="mt-3 bold text-black">Technology Offerings</p>
             <p class="mt-2">AI-native frameworks. Cloud-native systems. Modern stack, enterprise-ready.</p>
             <a href="./technology-offerings" class="primary-btn-inverse">Learn More </a>
@@ -271,6 +292,25 @@
     </div>
   </section>
   <!--About Section Ends-->
+
+  <!-- CTA Section Starts -->
+  <section id="cta" class="page-section pb-0 pt-0">
+    <div class="container cta-box-relative" data-aos="fade-down" data-aos-delay="400">
+      <div class="cta-blob1"></div>
+      <div class="cta-blob2"></div>
+      <div class="row justify-content-center align-items-center text-center cta-foreground">
+        <div class="col-md-9 ctaContent">
+          <h2 class="section-title inverse pt-3">Is your data ready for AI?</h2>
+          <p class="inverse mt-3 w-100" style="font-size: 1.125rem; opacity: 0.9;">Most enterprises discover the answer
+            too late. The framework helps you assess AI readiness, close gaps, and deploy with certainty.</p>
+          <div class="btn-holder pb-3">
+            <a href="./data-readiness-for-ai-framework" class="primary-btn">Get the Blueprint </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CTA Section Ends -->
 
   <section id="case-study" class="pb-5 mb-5">
     <div class="container">
@@ -359,8 +399,6 @@
       </div>
     </div>
   </section>
-
-
 
   <!--Footer Section Starts-->
   <div include="footer.html"></div>

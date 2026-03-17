@@ -1,0 +1,543 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Altzor - RPA & Script-Based Automation</title>
+
+  <!--Icons-->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="assets/img/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.png">
+
+  <link rel="mask-icon" href="assets/img/favicon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="assets/img/favicon.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+
+  <!-- Resource Hints for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com">
+
+  <!-- CSS References -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+
+  <link rel="stylesheet" href="assets/plugins/scroll_animation/scroll-animation.css" />
+  <link rel="stylesheet" href="assets/css/common.css" />
+  <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+  <link rel="stylesheet" href="assets/css/home.css" />
+  <link rel="stylesheet" href="assets/css/services.css" />
+  <link rel="stylesheet" href="assets/css/databricks.css" />
+  <link rel="stylesheet" href="assets/css/genai.css" />
+
+  <!-- JS References -->
+  <script src="assets/js/jquery.js" defer></script>
+  <script src="assets/js/header.js" defer></script>
+
+
+  <!-- Icons References -->
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" media="print"
+    onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  </noscript>
+
+  <style>
+    #services-banner {
+      background-image: url("assets/img/continuity-services/RPA\ &\ Script-Based\ Automation.webp");
+    }
+
+    /* #approach1 video {
+      width: 12%;
+    } */
+
+    @media (max-width: 768px) {
+      #approach1 video {
+        width: 25% !important;
+      }
+    }
+
+    /* How We Engage Cards */
+    .engage-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 2rem;
+      height: 100%;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .engage-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .engage-card .icon-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(255, 103, 1, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+    }
+
+    .engage-card .icon-circle i {
+      font-size: 1.75rem;
+      color: var(--primary);
+    }
+
+    .engage-card h5 {
+      font-weight: var(--semibold);
+      color: var(--black);
+      margin-bottom: 0.5rem;
+    }
+
+    .engage-card p {
+      color: #131314B2;
+      margin-bottom: 0;
+    }
+
+    /* Typical engagement numbered cards */
+    .engage-numbered {
+      background: #F8F8FA;
+      border-radius: 24px;
+      padding: 2rem;
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .engage-numbered:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .engage-numbered .num {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+
+    .engage-numbered p.title {
+      font-weight: var(--semibold);
+      color: var(--black);
+      margin-bottom: 0;
+      font-size: 1.1rem;
+    }
+
+    /* Why This Still Matters */
+    .matters-accent {
+      border-left: 4px solid var(--primary);
+      padding-left: 1.5rem;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <div id="loader">
+    <div class="loader-gradient-ring"></div>
+  </div>
+
+
+
+  <!--Header Section Starts-->
+  <!-- Header Starts -->
+  <header class="header">
+    <div class="container">
+      <div class="headerHolder">
+        <a href="./">
+          <img src="assets/img/Altzor-Logo.svg" alt="logo" class="logo" />
+        </a>
+        <nav class="navbar">
+          <ul class="navbar-list mobile-list">
+            <!-- 1) Who We Are -->
+            <li class="nav-item has-mega">
+              <a class="nav-link mega-toggle" href="javascript:void(0)" aria-expanded="false">Who We Are <i class='bx bx-sm bx-chevron-down'></i></a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div class="mega-col">
+                    <h6 class="mega-col-title">About</h6>
+                    <ul>
+                      <li><a class="mega-link about" href="./about">About Altzor</a></li>
+                      <li><a class="mega-link lead" href="./leadership">Leadership Team</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-col">
+                    <h6 class="mega-col-title">Company</h6>
+                    <ul>
+                      <li><a class="mega-link whychoose" href="./why-choose-us">Why Choose Us</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 2) What We Do -->
+            <li class="nav-item has-mega">
+              <a class="nav-link mega-toggle" href="javascript:void(0)" aria-expanded="false">What We Do <i class='bx bx-sm bx-chevron-down'></i></a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div class="mega-col">
+                    <h6 class="mega-col-title">Services</h6>
+                    <ul>
+                      <li><a class="mega-link prodeng" href="./product-engineering">Product Engineering</a></li>
+                      <li><a class="mega-link dataeng" href="./data-engineering">Data Engineering</a></li>
+                      <li><a class="mega-link plateng" href="./platform-based-engineering">Platform-Based Engineering</a></li>
+                      <li><a class="mega-link techeng" href="./technology-offerings">Technology Offerings</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-col">
+                    <h6 class="mega-col-title">Engagement Models</h6>
+                    <ul>
+                      <li><a class="mega-link gccservice" href="./gcc-as-a-service">GCC as a Service for Global Enterprise</a></li>
+                      <li><a class="mega-link vcpe" href="./vc-pe-backed-portfolio-support">VC/PE-backed Portfolio Support</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 3) Generative AI -->
+            <li class="nav-item"><a href="./generative-ai-engineering-services" class="nav-link genai">Generative AI &amp; AI Engineering</a></li>
+            <!-- 4) Careers -->
+            <li class="nav-item"><a href="./career" class="nav-link career">Careers</a></li>
+            <!-- 5) Resources -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle no-popup" href="javascript:void(0)" role="button" aria-expanded="false">Resources <i class='bx bx-sm bx-chevron-down'></i></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://blog.altzor.com/">Blogs</a></li>
+              </ul>
+            </li>
+            <li><a href="./contact-us" class="primary-btn mobile-btn">Contact Us </a></li>
+          </ul>
+        </nav>
+        <a href="./contact-us" class="primary-btn desktop-btn">Contact Us </a>
+        <div class="mobile-navbar-btn">
+          <i class='bx bx-menu bx-lg mobile-nav-icon' name="menu-outline"></i>
+          <i class='bx bx-menu-alt-right bx-lg mobile-nav-icon' name="close-outline"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header Ends -->
+  <!--Header Section Ends-->
+
+
+  <!-- Banner Section Starts -->
+  <section id="services-banner" class="d-flex align-items-center position-relative">
+    <div class="banner-overlay d-flex align-items-center">
+      <div class="container">
+        <div class="row flex justify-content-center align-items-center gap-0" data-aos="fade-down" data-aos-delay="400">
+          <div class="col-md-9">
+            <div class="banner-text text-center">
+              <h1>
+                <span class="text-primary">RPA</span> & Script-Based <br>Automation
+              </h1>
+              <p>
+                Pragmatic automation grounded in process stability and governance — delivering strong ROI for
+                structured,
+                repeatable processes.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Banner Section Ends -->
+
+  <section id="breadcrumb">
+    <div class="container">
+      <h4 class="supporting-title text-center text-black">Services / RPA & Script-Based Automation</h4>
+    </div>
+  </section>
+
+  <!--Overview Section Starts-->
+  <section id="about" class="page-section">
+    <div class="container d-flex flex-column justify-content-center align-items-center">
+      <div class="row d-flex align-items-center justify-content-center g-4" data-aos="fade-down" data-aos-delay="400">
+
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+          <h2 class="section-title">Overview</h2>
+
+          <p class="w-90 text-black mt-3">Rule-based automation continues to deliver strong ROI for structured,
+            repeatable processes. Many organizations rely on traditional RPA tools and scripting approaches to reduce
+            manual effort and operational errors.</p>
+          <p class="w-90 text-black mt-2">Altzor delivers pragmatic automation grounded in process stability and
+            governance.</p>
+        </div>
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+          <div class="bodyImg-holder position-relative">
+            <img src="assets/img/continuity-services/rpa_overview.webp" class="About Us Section Image" width="100%"
+              alt="RPA & Script-Based Automation" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Overview Section Ends-->
+
+  <!--What We Do Section Starts-->
+  <section id="about" class="pb-28">
+    <div class="container d-flex flex-column justify-content-center align-items-center">
+      <div class="row d-flex align-items-center justify-content-center g-5" data-aos="fade-down" data-aos-delay="400">
+
+        <div class="col-md-6 d-flex flex-column justify-content-center order-md-2">
+          <h2 class="section-title">What We Do</h2>
+
+          <p class="w-90 text-black mt-3">We automate predictable workflows while ensuring transparency, auditability,
+            and operational control.</p>
+        </div>
+        <div class="col-md-6 d-flex flex-column justify-content-center order-md-1">
+          <div class="bodyImg-holder position-relative">
+            <img src="assets/img/continuity-services/rpa_whatwedo.webp" class="About Us Section Image" width="100%"
+              alt="What We Do" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--What We Do Section Ends-->
+
+  <!-- Key Capabilities Section Starts -->
+  <section id="approach1" class="page-section">
+    <div class="container">
+      <h2 class="section-title text-center" data-aos="fade-down" data-aos-delay="400">Key Capabilities</h2>
+      <h4 class="supporting-title text-center" data-aos="fade-down" data-aos-delay="400">Enterprise-grade RPA and
+        automation services built for reliability and governance.
+      </h4>
+      <div class="row pt-5 g-4" data-aos="fade-down" data-aos-delay="400">
+        <div class="col-md-4">
+          <div class="gray-card">
+            <video src="./assets/img/services/Structured Streaming.mp4" loop muted autoplay preload="metadata"
+              class="video" playsinline></video>
+            <p class="mt-3 bold text-black">UiPath & Automation Anywhere</p>
+            <p class="mt-2">Full-lifecycle implementations on leading RPA platforms including UiPath and Automation
+              Anywhere.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="gray-card">
+            <video src="./assets/img/services/Power BI.mp4" loop muted autoplay preload="metadata" class="video"
+              playsinline></video>
+            <p class="mt-3 bold text-black">Power Automate Workflows</p>
+            <p class="mt-2">Microsoft Power Automate workflow design and implementation for seamless process
+              orchestration.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="gray-card">
+            <video src="./assets/img/Altzor Homepage Icons mp4/Web Structure.mp4" loop muted autoplay preload="metadata"
+              class="video" playsinline></video>
+            <p class="mt-3 bold text-black">Script-Based Automation</p>
+            <p class="mt-2">Custom script-based automation using enterprise-approved tools and established frameworks.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="gray-card">
+            <video src="./assets/img/Altzor Homepage Icons mp4/36 Analytics.mp4" loop muted autoplay preload="metadata"
+              class="video" playsinline style="width: 12%;"></video>
+            <p class="mt-3 bold text-black">Automation Monitoring & Support</p>
+            <p class="mt-2">Continuous monitoring, alerting, and support to ensure automations run reliably in
+              production.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="gray-card">
+            <video src="./assets/img/Altzor Homepage Icons mp4/12 Diagram.mp4" loop muted autoplay preload="metadata"
+              class="video" playsinline style="width: 12%;"></video>
+            <p class="mt-3 bold text-black">Exception Handling & Recovery</p>
+            <p class="mt-2">Robust exception handling and recovery design for resilient automation that gracefully
+              manages failures.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Key Capabilities Section Ends -->
+
+  <!-- How We Engage Section Starts -->
+  <!-- <section class="page-section" style="background: var(--grey);">
+    <div class="container">
+      <h2 class="section-title text-center" data-aos="fade-down" data-aos-delay="400">How We Engage</h2>
+      <h4 class="supporting-title text-center" data-aos="fade-down" data-aos-delay="400">We assess process suitability
+        before automation and align with compliance requirements.</h4>
+
+      <div class="row pt-5 g-4 justify-content-center" data-aos="fade-down" data-aos-delay="400">
+        <div class="col-md-4">
+          <div class="engage-card">
+            <div class="icon-circle"><i class='bx bx-analyse'></i></div>
+            <h5>Process Assessment</h5>
+            <p>Thorough assessment of process suitability before committing to automation.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="engage-card">
+            <div class="icon-circle"><i class='bx bx-check-shield'></i></div>
+            <h5>Compliance Alignment</h5>
+            <p>Solutions aligned with compliance frameworks and regulatory requirements.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="engage-card">
+            <div class="icon-circle"><i class='bx bx-revision'></i></div>
+            <h5>Change Management</h5>
+            <p>Implementation aligned with change-management requirements for smooth adoption.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- How We Engage Section Ends -->
+
+  <!-- Typical Engagements Section Starts -->
+  <section class="page-section">
+    <div class="container">
+      <h2 class="section-title text-center" data-aos="fade-down" data-aos-delay="400">How We Engage</h2>
+      <h4 class="supporting-title text-center" data-aos="fade-down" data-aos-delay="400">We assess process suitability
+        before automation and implement solutions<br> aligned with compliance and change-management requirements.
+      </h4>
+      <div class="row pt-5 g-4 justify-content-center" data-aos="fade-down" data-aos-delay="400">
+        <div class="col-md-4">
+          <div class="engage-numbered">
+            <div class="num">01</div>
+            <p class="title">Back-office automation initiatives</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="engage-numbered">
+            <div class="num">02</div>
+            <p class="title">Process efficiency programs</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="engage-numbered">
+            <div class="num">03</div>
+            <p class="title">Automation platform support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Typical Engagements Section Ends -->
+
+  <!-- Why This Still Matters Section Starts -->
+  <section id="about" class="page-section" style="background: var(--grey);">
+    <div class="container d-flex flex-column justify-content-center align-items-center">
+      <div class="row d-flex align-items-center justify-content-center g-4" data-aos="fade-down" data-aos-delay="400">
+        <!-- <div class="col-md-6 d-flex flex-column justify-content-center">
+          <div class="bodyImg-holder position-relative">
+            <img src="assets/img/services/Product-Engineering-Banner-1.jpg" width="100%" alt="Why This Still Matters"
+              loading="lazy" />
+          </div>
+        </div> -->
+        <div class="col-md-12 d-flex flex-column justify-content-center">
+          <div class="matters-accent">
+            <h2 class="section-title">Why This Still Matters</h2>
+            <p class="w-90 text-black mt-3" style="font-size: 1.125rem;">Not every process needs AI. Well-designed
+              rule-based automation remains highly effective and reliable.</p>
+            <p class="w-90 text-black mt-2" style="font-size: 1.125rem;">It delivers consistent, auditable results for
+              structured workflows at a fraction of the complexity.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Why This Still Matters Section Ends -->
+
+  <!-- AI Enablement FAQs Section Starts -->
+  <section id="genai-faqs" class="page-section">
+    <div class="container">
+      <h2 class="section-title text-center" data-aos="fade-down" data-aos-delay="400">AI Enablement & Future Use Cases
+      </h2>
+      <h4 class="supporting-title text-center" data-aos="fade-down" data-aos-delay="400">How AI enhances traditional
+        RPA and automation</h4>
+
+      <div class="mt-5" data-aos="fade-down" data-aos-delay="400">
+        <div class="accordion" id="accordionAI">
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingAiOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAiOne"
+                aria-expanded="true" aria-controls="collapseAiOne">
+                How does AI enhance traditional RPA?
+              </button>
+            </h2>
+            <div id="collapseAiOne" class="accordion-collapse collapse show" aria-labelledby="headingAiOne"
+              data-bs-parent="#accordionAI">
+              <div class="accordion-body">
+                <p class="text-black">AI enables intelligent automation by handling unstructured inputs such as
+                  documents, emails, and images, expanding automation scope.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingAiTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseAiTwo" aria-expanded="false" aria-controls="collapseAiTwo">
+                Can AI help RPA scale better?
+              </button>
+            </h2>
+            <div id="collapseAiTwo" class="accordion-collapse collapse" aria-labelledby="headingAiTwo"
+              data-bs-parent="#accordionAI">
+              <div class="accordion-body">
+                <p class="text-black">Yes. AI can improve exception handling and decision support, making automations
+                  more resilient.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingAiThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseAiThree" aria-expanded="false" aria-controls="collapseAiThree">
+                Is this still rule-based automation?
+              </button>
+            </h2>
+            <div id="collapseAiThree" class="accordion-collapse collapse" aria-labelledby="headingAiThree"
+              data-bs-parent="#accordionAI">
+              <div class="accordion-body">
+                <p class="text-black">Yes. Rules remain foundational; AI adds flexibility where rules alone fall short.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- AI Enablement FAQs Section Ends -->
+
+
+
+  <!--Footer Section Starts-->
+  <div include="footer.html"></div>
+  <!--Footer Section Ends-->
+
+  <!-- JS References -->
+  <script src="assets/js/bootstrap.min.js "></script>
+  <script src="assets/plugins/scroll_animation/scroll-animation.js"></script>
+  <script src="assets/js/common.js"></script>
+  <!-- <script src="assets/js/header.js"></script> -->
+  <script src="assets/js/home.js"></script>
+</body>
+
+</html>

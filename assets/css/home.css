@@ -328,3 +328,28 @@ video{
     top:40%;
   }
 }
+
+/* CTA Data Dots Styles */
+.cta-box-relative {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.cta-blob1 {
+  position: absolute; width: 250px; height: 250px;
+  background: rgba(255,255,255,0.03); border-radius: 50%;
+  top: -80px; right: 100px; pointer-events: none;
+  z-index: 0;
+}
+.cta-blob2 {
+  position: absolute; width: 150px; height: 150px;
+  background: rgba(255,255,255,0.025); border-radius: 50%;
+  bottom: -40px; right: 280px; pointer-events: none;
+  z-index: 0;
+}
+
+.cta-foreground {
+  position: relative;
+  z-index: 2;
+}

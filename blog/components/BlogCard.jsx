@@ -36,9 +36,12 @@ export default function BlogCard({ post, variant = 'default' }) {
             />
           </div>
           <div className="flex-1 min-w-0">
-            <h4 className="font-bold text-sm text-gray-900 mb-2 line-clamp-2 group-hover:text-primary transition-colors duration-300">
+            <h4 className="font-bold text-sm text-gray-900 mb-1 line-clamp-2 group-hover:text-primary transition-colors duration-300">
               {post.title}
             </h4>
+            <p className="text-xs text-gray-500 mb-2 line-clamp-2 leading-relaxed">
+              {post.excerpt}
+            </p>
             <div className="flex items-center gap-3 text-xs text-gray-500">
               {post.publishedAt && (
                 <span>{format(new Date(post.publishedAt), 'MMM dd')}</span>
@@ -55,25 +58,18 @@ export default function BlogCard({ post, variant = 'default' }) {
   // Featured variant - large prominent card
   if (variant === 'featured') {
     return (
-      <Link href={`/${post.slug.current}`} className="group block h-full">
+      <Link href={`/${post.slug.current}`} className="group block h-full flex-1">
         <article className="bg-white rounded-2xl overflow-hidden h-full flex flex-col border border-gray-200 hover:border-primary hover:shadow-2xl transition-all duration-500">
-          <div className="relative w-full overflow-hidden bg-white border border-gray-100 rounded-t-2xl">
+          <div className="relative w-full overflow-hidden bg-white rounded-t-2xl" style={{ maxHeight: '400px' }}>
             <Image
               src={imageUrl}
               alt={post.mainImage?.alt || post.title}
               width={1200}
               height={800}
               sizes="(max-width: 768px) 100vw, 60vw"
-              className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 rounded-t-2xl"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 rounded-t-2xl"
               priority
             />
-            {/* {post.categories && post.categories.length > 0 && (
-              <div className="absolute top-4 left-4">
-                <Badge className="bg-primary text-white px-3 py-1.5 text-sm font-semibold  border-primary-foreground">
-                  {post.categories[0].title}
-                </Badge>
-              </div>
-            )} */}
           </div>
           <div className="p-8 flex flex-col grow">
             <h2 className="text-3xl  font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors duration-300 line-clamp-2">

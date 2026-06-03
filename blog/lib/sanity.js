@@ -2,19 +2,20 @@ import { client } from '@/sanity/lib/client'
 
 // Fetch all posts
 export async function getPosts() {
-  const query = `*[_type == "post" && !(_id in path("drafts.**")) && defined(slug.current)] | order(publishedAt desc) {
+  const query = `*[_type == "post" && !(_id in path("drafts.**")) && defined(slug.current)] | order(coalesce(publishedAt, _createdAt) desc) {
     _id,
     title,
     slug,
     excerpt,
     mainImage,
     publishedAt,
+    _createdAt,
     body,
     "author": author->{name, slug, image, jobTitle},
     "categories": categories[]->{_id, title, slug, color},
     featured
   }`
-  
+
   return await client.fetch(query)
 }
 

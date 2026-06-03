@@ -16,9 +16,16 @@ export default function BlogPageClient({ initialPosts, categories, featuredPosts
   // Get the featured post from Sanity (marked as featured in Studio)
   const featuredPost = featuredPosts && featuredPosts.length > 0 ? featuredPosts[0] : null
   
-  // Get recent posts for sidebar (excluding the featured post if it exists)
-  const recentPosts = initialPosts && initialPosts.length > 1 
-    ? initialPosts.filter(post => post._id !== featuredPost?._id).slice(0, 5)
+  // Get recent posts for sidebar — most recent 5, excluding the featured post
+  const recentPosts = initialPosts && initialPosts.length > 1
+    ? [...initialPosts]
+        .filter(post => post._id !== featuredPost?._id)
+        .sort((a, b) => {
+          const dateA = new Date(a.publishedAt || a._createdAt || 0)
+          const dateB = new Date(b.publishedAt || b._createdAt || 0)
+          return dateB - dateA
+        })
+        .slice(0, 5)
     : []
 
   // Filter posts based on search query and selected category
